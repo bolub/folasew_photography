@@ -16,6 +16,7 @@
     "next": "10.0.5",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-lazy-load-image-component": "^1.5.1",
     "react-spinners": "^0.10.4"
   }
 }
