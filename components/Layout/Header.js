@@ -25,7 +25,7 @@ const Header = ({ getSingleImage }) => {
     },
     {
       label: "Weddings",
-      value: "wedding",
+      value: "weddings",
     },
     {
       label: "Product",
