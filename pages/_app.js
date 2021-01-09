@@ -4,6 +4,10 @@ import "../styles/globals.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { customTheme } from "../chakra/theme";
 
+// lazy load blur css
+import "react-lazy-load-image-component/src/effects/blur.css";
+import "./../styles/globals.css";
+
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={customTheme}>
