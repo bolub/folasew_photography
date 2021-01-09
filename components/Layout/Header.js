@@ -53,13 +53,15 @@ const Header = ({ getSingleImage }) => {
       pb={8}
       w="100%"
       d="flex"
+      overflowX="auto"
       px={{ base: 4, md: 32 }}
     >
-      <HStack my="auto" spacing={10}>
+      <HStack my="auto" spacing={{ base: 6, md: 10 }}>
         {categories?.map((category, index) => {
           return (
             <Text
               px={3}
+              fontSize={{ base: "sm", md: "md" }}
               py={2}
               cursor="pointer"
               borderRadius="md"
@@ -83,7 +85,7 @@ const Header = ({ getSingleImage }) => {
         })}
       </HStack>
 
-      <Box my="auto" ml="auto">
+      <Box d={{ base: "none", md: "block" }} my="auto" ml="auto">
         <ColorModeSwitch />
       </Box>
     </chakra.header>

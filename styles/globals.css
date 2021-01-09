@@ -1,5 +1,12 @@
 .lazy-load-image-background {
-  width: 100% !important;
+  /* width: 100% !important; */
   max-width: 49%;
   margin-bottom: 20px;
+}
+
+@media (max-width: "440px") {
+  .lazy-load-image-background {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
 }

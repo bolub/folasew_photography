@@ -1,7 +1,7 @@
 import React from "react";
 
 // chakra
-import { Flex, Center, Text, Box } from "@chakra-ui/react";
+import { Flex, Center, Text, Box, Image } from "@chakra-ui/react";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -57,7 +57,13 @@ const Home = () => {
   return (
     <div>
       <Layout title="Home" getSingleImage={getSingleImage}>
-        <Flex justifyContent="space-between" mt={3} flexWrap="wrap" w="100%">
+        <Flex
+          flexDir={{ base: "column", md: "row" }}
+          justifyContent="space-between"
+          mt={3}
+          flexWrap="wrap"
+          w="100%"
+        >
           {loading && (
             <Center minH="60vh" w="100%">
               <BeatLoader color="#A47828" />
@@ -68,19 +74,29 @@ const Home = () => {
             allImages?.length > 0 &&
             allImages?.map((image) => {
               return (
-                <LazyLoadImage
+                // <LazyLoadImage
+                //   key={image.public_id}
+                //   effect="blur"
+                //   src={`https://res.cloudinary.com/bolub/image/upload/${image.public_id}`}
+                //   style={{
+                //     objectFit: "cover",
+                //     height: "466px",
+                //     display: "inline !important",
+                //     width: "100%",
+                //     borderRadius: "4px",
+                //     zIndex: 1,
+                //     border: "border: 1px solid #F2F2F2;",
+                //   }}
+                // />
+                <Image
                   key={image.public_id}
-                  effect="blur"
                   src={`https://res.cloudinary.com/bolub/image/upload/${image.public_id}`}
-                  style={{
-                    objectFit: "cover",
-                    height: "466px",
-                    display: "inline !important",
-                    width: "100%",
-                    borderRadius: "4px",
-                    zIndex: 1,
-                    border: "border: 1px solid #F2F2F2;",
-                  }}
+                  maxW={{ base: "100%", md: "49%" }}
+                  h="446px"
+                  objectFit="cover"
+                  borderRadius="4px"
+                  borderWidth="1px"
+                  mb={5}
                 />
               );
             })}

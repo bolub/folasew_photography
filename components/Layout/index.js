@@ -8,7 +8,7 @@ import { Box, useColorMode } from "@chakra-ui/react";
 
 // Components
 import Header from "./Header";
-import Navbar from "../Navbar";
+import Navbar from "../UI/Navbar";
 
 const Layout = ({ children, title, getSingleImage }) => {
   const { colorMode } = useColorMode();
