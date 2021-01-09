@@ -16,6 +16,7 @@ const Navbar = () => {
       w="100%"
       borderBottomWidth="1px"
       py={8}
+      zIndex={100}
     >
       <Flex>
         <Text textTransform="uppercase" color="brand.primary" fontWeight={900}>
