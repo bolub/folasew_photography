@@ -1,10 +1,24 @@
-import { chakra, useColorMode, Text, Flex, HStack } from "@chakra-ui/react";
+import React from "react";
+
+import {
+  chakra,
+  useColorMode,
+  Text,
+  Flex,
+  HStack,
+  useDisclosure,
+} from "@chakra-ui/react";
 
 // components
 import MobileView from "./MobileView";
+import AboutUs from "../../About";
 
 const Navbar = () => {
   const { colorMode } = useColorMode();
+
+  // about us
+  const aboutUsDisclosure = useDisclosure();
+  const aboutUsRef = React.useRef();
 
   return (
     <chakra.nav
@@ -41,7 +55,13 @@ const Navbar = () => {
           ml="auto"
         >
           {/* About */}
-          <Text fontSize="sm" cursor="pointer" fontWeight={800}>
+          <Text
+            onClick={aboutUsDisclosure.onOpen}
+            ref={aboutUsRef}
+            fontSize="sm"
+            cursor="pointer"
+            fontWeight={800}
+          >
             About us
           </Text>
 
@@ -59,6 +79,8 @@ const Navbar = () => {
         <MobileView />
         {/* ============================================================ */}
       </Flex>
+
+      <AboutUs disclosure={aboutUsDisclosure} btnRef={aboutUsDisclosure} />
     </chakra.nav>
   );
 };
