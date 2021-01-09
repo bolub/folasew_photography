@@ -1,7 +1,7 @@
 import React from "react";
 
 // chakra
-import { Flex, Center, useColorMode } from "@chakra-ui/react";
+import { Flex, Center, useColorMode, Text } from "@chakra-ui/react";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -17,27 +17,41 @@ const Home = () => {
 
   const getAllImages = () => {
     setLoading(true);
+    setAllImages([]);
     fetch("https://res.cloudinary.com/bolub/image/list/home.json ")
       .then((response) => response.json())
       .then((data) => {
         setLoading(false);
         setAllImages(data?.resources);
+      })
+      .catch((e) => {
+        console.log(e);
+        setLoading(false);
+        return null;
       });
   };
 
   const getSingleImage = (category) => {
     setLoading(true);
+    setAllImages([]);
     fetch(`https://res.cloudinary.com/bolub/image/list/${category}.json`)
       .then((response) => response.json())
       .then((data) => {
         setLoading(false);
         setAllImages(data?.resources);
+      })
+      .catch((e) => {
+        console.log(e);
+        setLoading(false);
+        return null;
       });
   };
 
   React.useEffect(() => {
     getAllImages();
   }, []);
+
+  console.log(allImages);
 
   return (
     <div>
@@ -62,10 +76,19 @@ const Home = () => {
                     height: "466px",
                     display: "inline !important",
                     width: "100%",
+                    borderRadius: "4px",
+                    zIndex: 1,
+                    border: "border: 1px solid #F2F2F2;",
                   }}
                 />
               );
             })}
+
+          {!loading && allImages?.length === 0 && (
+            <Center textAlign="center" minH="60vh" w="100%">
+              <Text>No Images Available for this category</Text>
+            </Center>
+          )}
         </Flex>
       </Layout>
     </div>
