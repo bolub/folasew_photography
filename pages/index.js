@@ -13,7 +13,7 @@ const Home = () => {
 
   const getAllImages = () => {
     setLoading(true);
-    fetch("http://res.cloudinary.com/bolub/image/list/home.json ")
+    fetch("https://res.cloudinary.com/bolub/image/list/home.json ")
       .then((response) => response.json())
       .then((data) => {
         setLoading(false);
@@ -23,7 +23,7 @@ const Home = () => {
 
   const getSingleImage = (category) => {
     setLoading(true);
-    fetch(`http://res.cloudinary.com/bolub/image/list/${category}.json`)
+    fetch(`https://res.cloudinary.com/bolub/image/list/${category}.json`)
       .then((response) => response.json())
       .then((data) => {
         setLoading(false);
