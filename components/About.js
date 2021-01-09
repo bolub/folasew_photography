@@ -55,7 +55,7 @@ const AboutUs = ({
 
   return (
     <Drawer
-      size="full"
+      // size="6xl"
       isOpen={disclosure.isOpen}
       placement="bottom"
       onClose={disclosure.onClose}
@@ -69,8 +69,8 @@ const AboutUs = ({
           overflowY="auto"
           boxShadow="md"
           borderWidth="1px"
-          height={height}
-          maxHeight={maxHeight}
+          height="95vh"
+          // maxHeight="90"
           borderTopRadius={borderTopRadius}
           bg={colorMode === "light" ? "white" : "#333333"}
         >
