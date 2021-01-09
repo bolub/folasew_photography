@@ -1,19 +1,20 @@
 import React from "react";
 
 // chakra
-import { Flex, Center, useColorMode, Text } from "@chakra-ui/react";
+import { Flex, Center, Text, Box } from "@chakra-ui/react";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // components
 import Layout from "../components/Layout";
 import { BeatLoader } from "react-spinners";
+import Empty from "../components/UI/Empty";
 
 const Home = () => {
   const [allImages, setAllImages] = React.useState();
   const [loading, setLoading] = React.useState(false);
 
-  const { colorMode } = useColorMode();
+  // const { colorMode } = useColorMode();
 
   const getAllImages = () => {
     setLoading(true);
@@ -85,8 +86,11 @@ const Home = () => {
             })}
 
           {!loading && allImages?.length === 0 && (
-            <Center textAlign="center" minH="60vh" w="100%">
-              <Text>No Images Available for this category</Text>
+            <Center flexDir="column" textAlign="center" minH="60vh" w="100%">
+              <Box mx="auto" w="300px">
+                <Empty />
+              </Box>
+              <Text mt={6}>No Images Available for this category</Text>
             </Center>
           )}
         </Flex>
