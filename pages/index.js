@@ -1,15 +1,19 @@
 import React from "react";
 
 // chakra
-import { Box, Flex, Image, Center } from "@chakra-ui/react";
+import { Flex, Center, useColorMode } from "@chakra-ui/react";
 
-// componenets
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
+// components
 import Layout from "../components/Layout";
 import { BeatLoader } from "react-spinners";
 
 const Home = () => {
   const [allImages, setAllImages] = React.useState();
   const [loading, setLoading] = React.useState(false);
+
+  const { colorMode } = useColorMode();
 
   const getAllImages = () => {
     setLoading(true);
@@ -40,28 +44,28 @@ const Home = () => {
       <Layout title="Home" getSingleImage={getSingleImage}>
         <Flex justifyContent="space-between" mt={3} flexWrap="wrap" w="100%">
           {loading && (
-            <Center color="brand.primary" minH="60vh" w="100%">
-              <BeatLoader />
+            <Center minH="60vh" w="100%">
+              <BeatLoader color="#A47828" />
             </Center>
           )}
 
-          {!loading && allImages?.length > 0 && (
-            <>
-              {allImages?.map((image) => {
-                return (
-                  <Image
-                    h="466px"
-                    objectFit="cover"
-                    mb={4}
-                    // w="40%"
-                    maxW="49%"
-                    key={image.public_id}
-                    src={`http://res.cloudinary.com/bolub/image/upload/${image.public_id}`}
-                  />
-                );
-              })}
-            </>
-          )}
+          {!loading &&
+            allImages?.length > 0 &&
+            allImages?.map((image) => {
+              return (
+                <LazyLoadImage
+                  key={image.public_id}
+                  effect="blur"
+                  src={`https://res.cloudinary.com/bolub/image/upload/${image.public_id}`}
+                  style={{
+                    objectFit: "cover",
+                    height: "466px",
+                    display: "inline !important",
+                    width: "100%",
+                  }}
+                />
+              );
+            })}
         </Flex>
       </Layout>
     </div>
