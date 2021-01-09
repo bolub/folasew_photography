@@ -1,11 +1,11 @@
 import React from "react";
 
 import {
-  chakra,
-  useColorMode,
+  // chakra,
+  // useColorMode,
   DrawerCloseButton,
   Text,
-  Flex,
+  // Flex,
   VStack,
   Box,
   IconButton,
@@ -16,7 +16,7 @@ import {
 import { ColorModeSwitchMobile } from "../ColorModeSwitch";
 import CustomDrawer from "../CustomDrawer";
 
-const MobileView = () => {
+const MobileView = ({ aboutUsDisclosure, aboutUsbtnRef }) => {
   const sidebarDisclosure = useDisclosure();
   const sidebarBtnRef = React.useRef();
 
@@ -75,6 +75,11 @@ const MobileView = () => {
               pb={3}
               cursor="pointer"
               fontWeight={800}
+              ref={aboutUsbtnRef}
+              onClick={() => {
+                sidebarDisclosure.onClose();
+                aboutUsDisclosure.onOpen();
+              }}
             >
               About us
             </Text>

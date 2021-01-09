@@ -76,7 +76,10 @@ const Navbar = () => {
         </HStack>
 
         {/*==================== Mobile view ============================== */}
-        <MobileView />
+        <MobileView
+          aboutUsDisclosure={aboutUsDisclosure}
+          aboutUsbtnRef={aboutUsRef}
+        />
         {/* ============================================================ */}
       </Flex>
 
