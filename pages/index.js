@@ -8,7 +8,7 @@ import { Flex, Center, Text, Box, Image, HStack } from "@chakra-ui/react";
 // components
 import Layout from "../components/Layout";
 import { BeatLoader } from "react-spinners";
-import Empty from "../components/UI/Empty";
+import Empty, { EmptyV2 } from "../components/UI/Empty";
 
 const Home = () => {
   const [allImages, setAllImages] = React.useState();
@@ -136,10 +136,10 @@ const Home = () => {
 
           {!loading && allImages?.length === 0 && (
             <Center flexDir="column" textAlign="center" minH="60vh" w="100%">
-              <Box mx="auto" w="300px">
-                <Empty />
+              <Box mx="auto" w="400px">
+                <EmptyV2 />
               </Box>
-              <Text mt={6}>No Images Available for this category</Text>
+              <Text mt={6}>Something's cooking...</Text>
             </Center>
           )}
         </Flex>
