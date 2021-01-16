@@ -127,7 +127,7 @@ const Home = () => {
                       </svg>
 
                       <Text
-                        fontSize="sm"
+                        fontSize={{ base: "xs", md: "sm" }}
                         textTransform="uppercase"
                         fontWeight={900}
                         color="brand.primary"

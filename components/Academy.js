@@ -17,7 +17,7 @@ const Academy = () => {
       <chakra.h2
         mt={20}
         mb={{ base: 6, md: 10 }}
-        fontSize={{ base: "4xl", md: "42px" }}
+        fontSize={{ base: "3xl", md: "42px" }}
         fontWeight={900}
         textAlign="center"
       >
