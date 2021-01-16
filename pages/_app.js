@@ -4,15 +4,19 @@ import "../styles/globals.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { customTheme } from "../chakra/theme";
 
+import SimpleReactLightbox from "simple-react-lightbox";
+
 // lazy load blur css
 import "react-lazy-load-image-component/src/effects/blur.css";
 import "./../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider theme={customTheme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <SimpleReactLightbox>
+      <ChakraProvider theme={customTheme}>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </SimpleReactLightbox>
   );
 }
 
