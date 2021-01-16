@@ -72,10 +72,29 @@ const Home = () => {
     }
   };
 
+  const options = {
+    // settings: {
+    //   overlayColor: "rgb(25, 136, 124)",
+    //   autoplaySpeed: 1500,
+    //   transitionSpeed: 900,
+    // },
+    buttons: {
+      showAutoplayButton: false,
+      showDownloadButton: false,
+      showThumbnailsButton: false,
+    },
+    // caption: {
+    //   captionColor: "#a6cfa5",
+    //   captionFontFamily: "nunito, sans-serif",
+    //   captionFontWeight: "300",
+    //   captionTextTransform: "uppercase",
+    // },
+  };
+
   return (
     <div>
       <Layout title="Home" getSingleImage={getSingleImage}>
-        <SRLWrapper>
+        <SRLWrapper options={options}>
           <Flex
             flexDir={{ base: "column", md: "row" }}
             justifyContent="space-between"
@@ -185,7 +204,7 @@ const Home = () => {
           right={{ base: 4, md: 6 }}
           onClick={() => {
             share(
-              `https://api.whatsapp.com/send/?phone=2348053667690&text=Hello+there%2C+I%27d+like+to+work+with+you&app_absent=0`
+              `https://api.whatsapp.com/send/?phone=2348053667690&text=Hello there, I’d like to making enquiries about&app_absent=0`
             );
           }}
         >

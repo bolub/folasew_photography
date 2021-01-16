@@ -167,10 +167,10 @@ const AboutUs = ({}) => {
                 color={colorMode === "dark" ? "gray.200" : "gray.500"}
               >
                 He holds a degree in Economics from the University of Ado-Ekiti
-                (now EKSU) and an Msc in Humanitarian and Refugee Studies from
-                the University of Ibadan. This attests to his pursuit of
-                excellence in academics which in turn translates to a high value
-                of professionalism and customer satisfaction with the utmost
+                (now EKSU) and Msc in Humanitarian and Refugee Studies from the
+                University of Ibadan. This attests to his pursuit of excellence
+                in academics which in turn translates to a high value of
+                professionalism and customer satisfaction with the utmost
                 attention to client experience and the smallest detail.
               </Text>
             </Box>

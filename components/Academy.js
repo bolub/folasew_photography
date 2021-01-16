@@ -1,15 +1,6 @@
 import React from "react";
 
-import {
-  Text,
-  Link,
-  Image,
-  Box,
-  chakra,
-  HStack,
-  Center,
-  Button,
-} from "@chakra-ui/react";
+import { Text, Link, Box, chakra, Center, Button } from "@chakra-ui/react";
 
 const Academy = () => {
   return (
