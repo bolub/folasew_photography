@@ -84,6 +84,7 @@ const Home = () => {
                     key={image.public_id}
                     w={{ base: "100%", md: "49%" }}
                     mb={10}
+                    cursor="pointer"
                   >
                     {/* // <LazyLoadImage
                 //   key={image.public_id}
