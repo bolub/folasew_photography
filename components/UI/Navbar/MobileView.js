@@ -58,7 +58,7 @@ const MobileView = ({ setToShow, aboutUsbtnRef, gd, gr }) => {
       </Box>
 
       <CustomDrawer disclosure={sidebarDisclosure} btnRef={sidebarBtnRef}>
-        <DrawerCloseButton />
+        {/* <DrawerCloseButton /> */}
         <Box py={10} px={5}>
           <VStack spacing={10} align="left">
             {/* <Text
