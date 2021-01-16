@@ -10,3 +10,12 @@
     width: 100% !important;
   }
 }
+
+.faded__img {
+  transition: 0.3s ease;
+}
+
+.faded__img:hover {
+  filter: grayscale(0%) opacity(1);
+  opacity: 1;
+}

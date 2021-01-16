@@ -32,6 +32,7 @@ const CustomDrawer = ({
       onClose={disclosure.onClose}
       finalFocusRef={btnRef}
       isFullHeight={isFullHeight}
+      autoFocus={false}
     >
       <DrawerOverlay
       // bg="rgba(255, 255, 255, .8)"
@@ -45,7 +46,7 @@ const CustomDrawer = ({
           borderTopRadius={borderTopRadius}
           bg={colorMode === "light" ? "white" : "#333333"}
         >
-          {/* <DrawerCloseButton /> */}
+          <DrawerCloseButton size="lg" borderRadius="full" />
 
           {title && <DrawerHeader px={0}>{title}</DrawerHeader>}
 

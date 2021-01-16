@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   chakra,
@@ -12,18 +12,46 @@ import {
 // components
 import MobileView from "./MobileView";
 import AboutUs from "../../About";
+import CustomDrawer from "../CustomDrawer";
+import Contact from "../../Contact";
+import Academy from "../../Academy";
 
 const Navbar = () => {
+  // state
+  const [toShow, setToShow] = useState();
+
+  // color mode
   const { colorMode } = useColorMode();
 
   // about us
   const aboutUsDisclosure = useDisclosure();
   const aboutUsRef = React.useRef();
 
+  // general
+  const generalDisclosure = useDisclosure();
+  const generalRef = React.useRef();
+
+  // data
+  const navItems = [
+    {
+      label: "About us",
+      id: "about",
+    },
+    {
+      label: "Photography Academy",
+      id: "academy",
+    },
+    {
+      label: "Contact",
+      id: "contact",
+    },
+  ];
+
   return (
     <chakra.nav
       d="flex"
       bg={colorMode === "light" ? "white" : "#333333"}
+      bg="auto"
       px={{ base: 4, md: 32 }}
       // h="118px"
       flexDir="column"
@@ -54,8 +82,25 @@ const Navbar = () => {
           textTransform="uppercase"
           ml="auto"
         >
+          {navItems?.map((item, index) => {
+            return (
+              <Text
+                key={item.id}
+                onClick={() => {
+                  setToShow(item.id);
+                  generalDisclosure.onOpen();
+                }}
+                ref={generalRef}
+                fontSize="sm"
+                cursor="pointer"
+                fontWeight={800}
+              >
+                {item.label}
+              </Text>
+            );
+          })}
           {/* About */}
-          <Text
+          {/* <Text
             onClick={aboutUsDisclosure.onOpen}
             ref={aboutUsRef}
             fontSize="sm"
@@ -65,17 +110,35 @@ const Navbar = () => {
             About us
           </Text>
 
-          <Text fontSize="sm" cursor="pointer" fontWeight={800}>
+          <Text
+            onClick={() => {
+              setToShow("Academy");
+              generalDisclosure.onOpen();
+            }}
+            ref={generalRef}
+            fontSize="sm"
+            cursor="pointer"
+            fontWeight={800}
+          >
             Academy
-          </Text>
+          </Text> */}
 
           {/* Contact */}
-          <Text fontSize="sm" cursor="pointer" fontWeight={800}>
+          {/* <Text
+            onClick={() => {
+              setToShow("Contact");
+              generalDisclosure.onOpen();
+            }}
+            ref={generalRef}
+            fontSize="sm"
+            cursor="pointer"
+            fontWeight={800}
+          >
             Contact
-          </Text>
+          </Text> */}
         </HStack>
 
-        {/*==================== Mobile view ============================== */}
+        {/*==================== Mobile view for navbar ============================== */}
         <MobileView
           aboutUsDisclosure={aboutUsDisclosure}
           aboutUsbtnRef={aboutUsRef}
@@ -83,7 +146,16 @@ const Navbar = () => {
         {/* ============================================================ */}
       </Flex>
 
-      <AboutUs disclosure={aboutUsDisclosure} btnRef={aboutUsDisclosure} />
+      <CustomDrawer
+        placement="bottom"
+        disclosure={generalDisclosure}
+        btnRef={generalRef}
+        height="95vh"
+      >
+        {toShow === "academy" && <Academy />}
+        {toShow === "about" && <AboutUs />}
+        {toShow === "contact" && <Contact />}
+      </CustomDrawer>
     </chakra.nav>
   );
 };
