@@ -7,6 +7,7 @@ import {
   Flex,
   HStack,
   useDisclosure,
+  Image,
 } from "@chakra-ui/react";
 
 // components
@@ -60,7 +61,7 @@ const Navbar = () => {
       zIndex={100}
     >
       <Flex>
-        <Text
+        {/* <Text
           my="auto"
           textTransform="uppercase"
           color="brand.primary"
@@ -68,7 +69,14 @@ const Navbar = () => {
           fontSize={{ base: "sm", md: "md" }}
         >
           Folasewa ilori <br /> photography
-        </Text>
+        </Text> */}
+
+        <Image
+          my="auto"
+          w="170px"
+          // src="https://res.cloudinary.com/bolub/image/upload/v1610814703/folashewa_photography/IMG_5272.png"
+          src="./FolasebeansLogo.PNG"
+        />
 
         {/* desktop view */}
         <HStack

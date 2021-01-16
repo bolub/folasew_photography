@@ -55,7 +55,7 @@ const Header = ({ getSingleImage }) => {
     <chakra.header
       d="flex"
       pt={6}
-      pb={8}
+      pb={{ base: 4, md: 6 }}
       w="100%"
       d="flex"
       overflowX="auto"
