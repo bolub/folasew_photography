@@ -1,7 +1,16 @@
 import React from "react";
 
 // chakra
-import { Flex, Center, Text, Box, Image, HStack } from "@chakra-ui/react";
+import {
+  Flex,
+  Center,
+  Text,
+  Box,
+  Image,
+  HStack,
+  IconButton,
+  Tooltip,
+} from "@chakra-ui/react";
 
 // import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -11,7 +20,8 @@ import { SRLWrapper } from "simple-react-lightbox";
 // components
 import Layout from "../components/Layout";
 import { BeatLoader } from "react-spinners";
-import { EmptyV2 } from "../components/UI/Empty";
+import { EmptyV2 } from "../components/UI/Icons/Empty";
+import Whatsapp from "../components/UI/Icons/Whatsapp";
 
 const Home = () => {
   const [allImages, setAllImages] = React.useState();
@@ -54,6 +64,13 @@ const Home = () => {
   React.useEffect(() => {
     getAllImages();
   }, []);
+
+  //
+  const share = (link) => {
+    if (typeof window !== "undefined") {
+      window.open(link);
+    }
+  };
 
   return (
     <div>
@@ -149,6 +166,33 @@ const Home = () => {
             )}
           </Flex>
         </SRLWrapper>
+
+        {/* <IconButton
+          pos="fixed"
+          bottom={8}
+          right={6}
+          aria-label="whatsapp"
+          borderRadius="full"
+          bg="brand.primary"
+          color=""
+          icon={}
+          size="lg"
+        /> */}
+        <Box
+          cursor="pointer"
+          pos="fixed"
+          bottom={{ base: 2, md: 6 }}
+          right={{ base: 4, md: 6 }}
+          onClick={() => {
+            share(
+              `https://api.whatsapp.com/send/?phone=2348053667690&text=Hello+there%2C+I%27d+like+to+work+with+you&app_absent=0`
+            );
+          }}
+        >
+          {/* <Tooltip label="Contact us on whatsapp" aria-label="whatsapp contact"> */}
+          <Whatsapp />
+          {/* </Tooltip> */}
+        </Box>
       </Layout>
     </div>
   );
