@@ -8,7 +8,7 @@ import { Flex, Center, Text, Box, Image, HStack } from "@chakra-ui/react";
 // components
 import Layout from "../components/Layout";
 import { BeatLoader } from "react-spinners";
-import Empty, { EmptyV2 } from "../components/UI/Empty";
+import { EmptyV2 } from "../components/UI/Empty";
 
 const Home = () => {
   const [allImages, setAllImages] = React.useState();

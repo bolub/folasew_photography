@@ -19,21 +19,26 @@ import ColorModeSwitch from "../UI/ColorModeSwitch";
 
 const Header = ({ getSingleImage }) => {
   const categories = [
-    {
-      label: "All",
-      value: "home",
-    },
+    // {
+    //   label: "All",
+    //   value: "home",
+    // },
     {
       label: "Weddings",
       value: "weddings",
     },
+
     {
-      label: "Product",
-      value: "product",
+      label: "Portraits",
+      value: "Portraits",
     },
     {
-      label: "Outdoor",
-      value: "outdoor",
+      label: "Beauty",
+      value: "beauty",
+    },
+    {
+      label: "Editorial/Fine art",
+      value: "Editorial/Fine art",
     },
   ];
 

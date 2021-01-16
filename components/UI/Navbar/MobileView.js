@@ -16,7 +16,7 @@ import {
 import { ColorModeSwitchMobile } from "../ColorModeSwitch";
 import CustomDrawer from "../CustomDrawer";
 
-const MobileView = ({ aboutUsDisclosure, aboutUsbtnRef }) => {
+const MobileView = ({ setToShow, aboutUsbtnRef, gd, gr }) => {
   const sidebarDisclosure = useDisclosure();
   const sidebarBtnRef = React.useRef();
 
@@ -61,24 +61,25 @@ const MobileView = ({ aboutUsDisclosure, aboutUsbtnRef }) => {
         <DrawerCloseButton />
         <Box py={10} px={5}>
           <VStack spacing={10} align="left">
-            <Text
+            {/* <Text
               borderBottomWidth="1px"
               pb={3}
               cursor="pointer"
               fontWeight={800}
             >
               Home
-            </Text>
+            </Text> */}
 
             <Text
               borderBottomWidth="1px"
               pb={3}
               cursor="pointer"
               fontWeight={800}
-              ref={aboutUsbtnRef}
+              ref={gr}
               onClick={() => {
                 sidebarDisclosure.onClose();
-                aboutUsDisclosure.onOpen();
+                gd.onOpen();
+                setToShow("about");
               }}
             >
               About us
@@ -89,8 +90,14 @@ const MobileView = ({ aboutUsDisclosure, aboutUsbtnRef }) => {
               pb={3}
               cursor="pointer"
               fontWeight={800}
+              ref={gr}
+              onClick={() => {
+                sidebarDisclosure.onClose();
+                gd.onOpen();
+                setToShow("academy");
+              }}
             >
-              Contact
+              Photography Academy
             </Text>
 
             <Text
@@ -99,7 +106,7 @@ const MobileView = ({ aboutUsDisclosure, aboutUsbtnRef }) => {
               cursor="pointer"
               fontWeight={800}
             >
-              Academy
+              Contact
             </Text>
           </VStack>
         </Box>

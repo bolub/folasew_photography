@@ -23,10 +23,6 @@ const Navbar = () => {
   // color mode
   const { colorMode } = useColorMode();
 
-  // about us
-  const aboutUsDisclosure = useDisclosure();
-  const aboutUsRef = React.useRef();
-
   // general
   const generalDisclosure = useDisclosure();
   const generalRef = React.useRef();
@@ -37,6 +33,7 @@ const Navbar = () => {
       label: "About us",
       id: "about",
     },
+
     {
       label: "Photography Academy",
       id: "academy",
@@ -51,7 +48,6 @@ const Navbar = () => {
     <chakra.nav
       d="flex"
       bg={colorMode === "light" ? "white" : "#333333"}
-      bg="auto"
       px={{ base: 4, md: 32 }}
       // h="118px"
       flexDir="column"
@@ -140,8 +136,9 @@ const Navbar = () => {
 
         {/*==================== Mobile view for navbar ============================== */}
         <MobileView
-          aboutUsDisclosure={aboutUsDisclosure}
-          aboutUsbtnRef={aboutUsRef}
+          gd={generalDisclosure}
+          gr={generalRef}
+          setToShow={setToShow}
         />
         {/* ============================================================ */}
       </Flex>
