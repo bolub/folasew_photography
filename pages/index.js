@@ -102,7 +102,7 @@ const Home = () => {
                 // /> */}
                     <Image
                       src={`https://res.cloudinary.com/bolub/image/upload/${image.public_id}`}
-                      h="426px"
+                      h={{ base: "300px", md: "426px" }}
                       objectFit="cover"
                       borderRadius="4px"
                       borderWidth="1px"
