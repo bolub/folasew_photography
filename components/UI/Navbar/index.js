@@ -74,6 +74,7 @@ const Navbar = () => {
         <Image
           my="auto"
           w="170px"
+          maxH="62px"
           // src="https://res.cloudinary.com/bolub/image/upload/v1610814703/folashewa_photography/IMG_5272.png"
           src="./FolasebeansLogo.PNG"
         />
