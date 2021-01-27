@@ -12,13 +12,8 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuIcon,
-  MenuCommand,
   Button,
-  MenuDivider,
+  useColorMode,
 } from "@chakra-ui/react";
 
 // import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -30,13 +25,13 @@ import { SRLWrapper } from "simple-react-lightbox";
 import Layout from "../components/Layout";
 import { BeatLoader } from "react-spinners";
 import { EmptyV2 } from "../components/UI/Icons/Empty";
-import Whatsapp from "../components/UI/Icons/Whatsapp";
+// import Whatsapp from "../components/UI/Icons/Whatsapp";
 
 const Home = () => {
   const [allImages, setAllImages] = React.useState();
   const [loading, setLoading] = React.useState(false);
 
-  // const { colorMode } = useColorMode();
+  const { colorMode } = useColorMode();
 
   const getAllImages = () => {
     setLoading(true);
@@ -227,6 +222,7 @@ const Home = () => {
             bottom={{ base: 2, md: 6 }}
             right={{ base: 4, md: 6 }}
             colorScheme="primary"
+            bg="brand.primary"
             borderRadius="full"
             w="60px"
             h="60px"
@@ -248,7 +244,7 @@ const Home = () => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
+              stroke="white"
             >
               <path
                 stroke-linecap="round"
@@ -259,7 +255,7 @@ const Home = () => {
             </svg>
           </MenuButton>
 
-          <MenuList>
+          <MenuList bg={colorMode === "light" ? "white" : "#333333"}>
             {/* whatsapp */}
             <MenuItem
               mt={3}
