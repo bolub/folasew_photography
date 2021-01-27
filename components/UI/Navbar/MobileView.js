@@ -100,14 +100,14 @@ const MobileView = ({ setToShow, aboutUsbtnRef, gd, gr }) => {
               Photography Academy
             </Text>
 
-            <Text
+            {/* <Text
               borderBottomWidth="1px"
               pb={3}
               cursor="pointer"
               fontWeight={800}
             >
               Contact
-            </Text>
+            </Text> */}
           </VStack>
         </Box>
       </CustomDrawer>

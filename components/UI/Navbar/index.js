@@ -39,10 +39,10 @@ const Navbar = () => {
       label: "Photography Academy",
       id: "academy",
     },
-    {
-      label: "Contact",
-      id: "contact",
-    },
+    // {
+    //   label: "Contact",
+    //   id: "contact",
+    // },
   ];
 
   return (
