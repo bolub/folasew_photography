@@ -181,7 +181,7 @@ const Home = () => {
 
             {!loading && allImages?.length === 0 && (
               <Center flexDir="column" textAlign="center" minH="60vh" w="100%">
-                <Box mx="auto" maxW="400px">
+                <Box mx="auto" w={{ md: "400px" }} height="290px">
                   <EmptyV2 />
                 </Box>
                 <Text mt={6}>Something's cooking...</Text>
