@@ -8,6 +8,7 @@ import {
   DrawerContent,
   DrawerCloseButton,
   useColorMode,
+  CloseButton,
 } from "@chakra-ui/react";
 
 const CustomDrawer = ({
@@ -46,7 +47,13 @@ const CustomDrawer = ({
           borderTopRadius={borderTopRadius}
           bg={colorMode === "light" ? "white" : "#333333"}
         >
-          <DrawerCloseButton size="lg" borderRadius="full" />
+          <CloseButton
+            onClick={disclosure.onClose}
+            size="lg"
+            borderRadius="full"
+            ml="auto"
+            mmb={0}
+          />
 
           {title && <DrawerHeader px={0}>{title}</DrawerHeader>}
 

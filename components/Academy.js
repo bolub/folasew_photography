@@ -6,7 +6,7 @@ const Academy = () => {
   return (
     <Box px={{ base: 5, md: 52 }}>
       <chakra.h2
-        mt={20}
+        mt={10}
         mb={{ base: 6, md: 10 }}
         fontSize={{ base: "3xl", md: "42px" }}
         fontWeight={900}
@@ -25,7 +25,7 @@ const Academy = () => {
           </Text>{" "}
           and cost between{" "}
           <Text as="span" color="brand.primary" fontWeight={800}>
-            #100, 000 and #150, 000{" "}
+            ₦100,000 and ₦150,000{" "}
           </Text>
           respectively
         </Text>
@@ -45,7 +45,13 @@ const Academy = () => {
         </Text>
       </Box>
 
-      <Center mt={16} borderTopWidth="1px" borderBottomWidth="1px" py={6}>
+      <Center
+        mt={{ base: 8, md: 16 }}
+        borderTopWidth={{ md: "1px" }}
+        borderBottomWidth={{ md: "1px" }}
+        py={{ md: 6 }}
+        mb={10}
+      >
         <Button size="lg" colorScheme="primary" fontSize="md" fontWeight="bold">
           Register now
         </Button>

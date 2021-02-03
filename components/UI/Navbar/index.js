@@ -156,7 +156,7 @@ const Navbar = () => {
         placement="bottom"
         disclosure={generalDisclosure}
         btnRef={generalRef}
-        height="95vh"
+        height={{ base: "80vh", md: "95vh" }}
       >
         {toShow === "academy" && <Academy />}
         {toShow === "about" && <AboutUs />}

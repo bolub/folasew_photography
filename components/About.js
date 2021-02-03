@@ -20,7 +20,7 @@ const AboutUs = ({}) => {
   return (
     <Box px={{ base: 5, md: 52 }} mb={8}>
       <chakra.h2
-        mt={20}
+        mt={6}
         mb={{ base: 6, md: 10 }}
         fontSize={{ base: "3xl", md: "42px" }}
         fontWeight={900}
@@ -78,7 +78,7 @@ const AboutUs = ({}) => {
           // spacing={0}
           // mx="auto"
           mt={{ base: 12, md: 4 }}
-          columns={{ base: 1, md: 2, lg: 3 }}
+          columns={{ base: 1, lg: 3 }}
         >
           {allClients?.map((client) => {
             return (
@@ -87,24 +87,29 @@ const AboutUs = ({}) => {
                 isExternal
                 href={client.websiteUrl}
                 my="auto"
+                mx={{ base: "auto", md: 0 }}
+                bg="white"
+                w="160px"
                 // w="180px"
                 // borderLeftWidth="1px"
-                borderTopWidth="1px"
-                borderBottomWidth="1px"
-                h={{ base: "100px", md: "200px" }}
+                // borderTopWidth={{ md: "1px" }}
+                // borderBottomWidth={{ md: "1px" }}
+                h={{ base: "auto", md: "200px" }}
                 mb={{ base: 8, md: 0 }}
                 // borderWidth="1px"
                 d="flex"
                 justifyContent="center"
                 alignItems="center"
+                my="auto"
               >
                 <Image
                   // py={4}
-                  bg="white"
+                  // bg="white"
+                  // w="100%"
                   // sx={{ md: { filter: "grayscale(100%)", opacity: 0.5 } }}
                   // px={2}
-                  maxW="160px"
-                  ml={client.name === "Gifted Moms" && 6}
+                  my="auto"
+                  // ml={client.name === "Gifted Moms" && 6}
                   src={client.imageUrl}
                   className="faded__img"
                 />
