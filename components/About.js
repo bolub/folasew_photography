@@ -20,8 +20,8 @@ const AboutUs = ({}) => {
   return (
     <Box px={{ base: 5, md: 52 }} mb={8}>
       <chakra.h2
-        mt={6}
-        mb={{ base: 6, md: 10 }}
+        mt={10}
+        mb={{ base: 6, md: 6 }}
         fontSize={{ base: "3xl", md: "42px" }}
         fontWeight={900}
         textAlign="center"
@@ -31,7 +31,15 @@ const AboutUs = ({}) => {
 
       {/* Some explanations */}
       <Box>
-        <Text mb={10}>
+        <Text mb={10} textAlign="center">
+          We are Nigerian based wedding and portrait photographers. We dedicate
+          ourselves to telling love stories by freezing priceless moments in
+          destinations across the world. We offer a blend between{" "}
+          <Text as="span" color="brand.primary" fontWeight={800}>
+            documentary, fine artistry and elegance.
+          </Text>
+        </Text>
+        {/* <Text mb={10}>
           Folasewa Ilori photography cuts across{" "}
           <Text as="span" color="brand.primary" fontWeight={800}>
             Wedding, Portrait, Beauty/Editorials and Event(s)
@@ -54,7 +62,7 @@ const AboutUs = ({}) => {
           We have worked with brands across Africa especially in Nigeria and we
           are known for Creativity, Creating a very good working environment and
           our top notch delivery!
-        </Text>
+        </Text> */}
       </Box>
 
       {/* Our clients */}
@@ -77,7 +85,7 @@ const AboutUs = ({}) => {
           // justifyContent={{ base: "center" }}
           // spacing={0}
           // mx="auto"
-          mt={{ base: 12, md: 4 }}
+          mt={{ base: 12, md: 0 }}
           columns={{ base: 1, lg: 3 }}
         >
           {allClients?.map((client) => {
@@ -120,7 +128,7 @@ const AboutUs = ({}) => {
       </Box>
 
       {/* The team */}
-      <Box mt={24} w="100%" d="flex" flexDir="column">
+      <Box mt={20} w="100%" d="flex" flexDir="column">
         <chakra.h2
           // mb={{ base: 6, md: 10 }}
           fontSize={{ base: "", md: "xl" }}
@@ -132,7 +140,7 @@ const AboutUs = ({}) => {
           The Team
         </chakra.h2>
 
-        <Box mt={4}>
+        <Box mt={12}>
           {/* Folasewa team */}
           <Flex flexDir={{ base: "column", md: "row" }}>
             {/* Image */}
