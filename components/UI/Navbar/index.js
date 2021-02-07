@@ -8,6 +8,7 @@ import {
   HStack,
   useDisclosure,
   Image,
+  Link,
 } from "@chakra-ui/react";
 
 // components
@@ -104,43 +105,23 @@ const Navbar = () => {
               </Text>
             );
           })}
-          {/* About */}
-          {/* <Text
-            onClick={aboutUsDisclosure.onOpen}
-            ref={aboutUsRef}
-            fontSize="sm"
-            cursor="pointer"
-            fontWeight={800}
-          >
-            About us
-          </Text>
 
-          <Text
-            onClick={() => {
-              setToShow("Academy");
-              generalDisclosure.onOpen();
-            }}
-            ref={generalRef}
+          <Link
+            // onClick={() => {
+            //   setToShow(item.id);
+            //   generalDisclosure.onOpen();
+            // }}
             fontSize="sm"
             cursor="pointer"
             fontWeight={800}
-          >
-            Academy
-          </Text> */}
-
-          {/* Contact */}
-          {/* <Text
-            onClick={() => {
-              setToShow("Contact");
-              generalDisclosure.onOpen();
+            isExternal
+            _hover={{
+              textDecor: "none",
             }}
-            ref={generalRef}
-            fontSize="sm"
-            cursor="pointer"
-            fontWeight={800}
+            href="https://19fjc2jot86.typeform.com/to/sRkOu5jd"
           >
-            Contact
-          </Text> */}
+            Book us
+          </Link>
         </HStack>
 
         {/*==================== Mobile view for navbar ============================== */}
