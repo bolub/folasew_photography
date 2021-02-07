@@ -7,6 +7,7 @@ import {
   Text,
   // Flex,
   VStack,
+  Link,
   Box,
   IconButton,
   useDisclosure,
@@ -99,6 +100,20 @@ const MobileView = ({ setToShow, aboutUsbtnRef, gd, gr }) => {
             >
               Photography Academy
             </Text>
+
+            <Link
+              borderBottomWidth="1px"
+              pb={3}
+              cursor="pointer"
+              fontWeight={800}
+              isExternal
+              _hover={{
+                textDecor: "none",
+              }}
+              href="https://19fjc2jot86.typeform.com/to/sRkOu5jd"
+            >
+              Book us
+            </Link>
 
             {/* <Text
               borderBottomWidth="1px"
