@@ -30,7 +30,7 @@ const Header = ({ getSingleImage }) => {
 
     {
       label: "Portraits",
-      value: "Portraits",
+      value: "portraits",
     },
 
     {

@@ -36,7 +36,7 @@ const Home = () => {
   const getAllImages = () => {
     setLoading(true);
     setAllImages([]);
-    fetch("https://res.cloudinary.com/bolub/image/list/home.json ")
+    fetch("https://res.cloudinary.com/folasewa/image/list/home.json")
       .then((response) => response.json())
       .then((data) => {
         setLoading(false);
@@ -52,7 +52,7 @@ const Home = () => {
   const getSingleImage = (category) => {
     setLoading(true);
     setAllImages([]);
-    fetch(`https://res.cloudinary.com/bolub/image/list/${category}.json`)
+    fetch(`https://res.cloudinary.com/folasewa/image/list/${category}.json`)
       .then((response) => response.json())
       .then((data) => {
         setLoading(false);
@@ -94,7 +94,7 @@ const Home = () => {
     //   captionTextTransform: "uppercase",
     // },
   };
-
+  console.log(allImages);
   return (
     <div>
       <Layout title="Home" getSingleImage={getSingleImage}>
@@ -129,7 +129,7 @@ const Home = () => {
                     {/* // <LazyLoadImage
                 //   key={image.public_id}
                 //   effect="blur"
-                //   src={`https://res.cloudinary.com/bolub/image/upload/${image.public_id}`}
+                //   src={`https://res.cloudinary.com/folasewa/image/upload/${image.public_id}`}
                 //   style={{
                 //     objectFit: "cover",
                 //     height: "466px",
@@ -141,7 +141,7 @@ const Home = () => {
                 //   }}
                 // /> */}
                     <Image
-                      src={`https://res.cloudinary.com/bolub/image/upload/${image.public_id}`}
+                      src={`https://res.cloudinary.com/folasewa/image/upload/${image.public_id}`}
                       h={{ base: "300px", md: "426px" }}
                       objectFit="cover"
                       borderRadius="4px"
