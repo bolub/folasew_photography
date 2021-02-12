@@ -22,7 +22,7 @@ const colors = {
 const styles = {
   global: {
     "html, body": {
-      fontFamily: "'Nunito', sans-serif",
+      fontFamily: "'DM Sans', sans-serif",
     },
   },
 };
