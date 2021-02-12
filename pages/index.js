@@ -29,6 +29,7 @@ export const getStaticProps = async (context) => {
       props: {
         allImages: response.resources,
       },
+      revalidate: 1,
     };
   } catch (error) {
     return {
