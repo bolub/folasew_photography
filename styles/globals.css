@@ -1,3 +1,7 @@
+body {
+  scroll-behavior: smooth;
+}
+
 .lazy-load-image-background {
   /* width: 100% !important; */
   max-width: 49%;

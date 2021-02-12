@@ -10,7 +10,13 @@ import { Box, useColorMode } from "@chakra-ui/react";
 import Header from "./Header";
 import Navbar from "../UI/Navbar";
 
-const Layout = ({ children, title, getSingleImage }) => {
+const Layout = ({
+  children,
+  title,
+  getSingleImage,
+  padding = { base: 4, md: 32 },
+  withHeader = false,
+}) => {
   const { colorMode } = useColorMode();
 
   return (
@@ -89,15 +95,16 @@ const Layout = ({ children, title, getSingleImage }) => {
       <body
         style={{
           scrollBehavior: "smooth",
-          backgroundColor: colorMode === "light" ? "white" : "#333333",
+          // backgroundColor: colorMode === "light" ? "white" : "#333333",
           minHeight: "100vh",
         }}
       >
         <Navbar />
-        <Header getSingleImage={getSingleImage} />
+
+        {withHeader && <Header getSingleImage={getSingleImage} />}
 
         <main>
-          <Box px={{ base: 4, md: 32 }}>{children}</Box>
+          <Box px={padding}>{children}</Box>
         </main>
       </body>
 

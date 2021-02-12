@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 
+import Link from "next/link";
+
 import {
   chakra,
   useColorMode,
   Text,
   Flex,
+  Button,
   HStack,
   useDisclosure,
+  Box,
   Image,
-  Link,
+  Link as ExtLink,
 } from "@chakra-ui/react";
 
 // components
@@ -17,6 +21,7 @@ import AboutUs from "../../About";
 import CustomDrawer from "../CustomDrawer";
 import Contact from "../../Contact";
 import Academy from "../../Academy";
+import { ColorModeSwitchMobile } from "../ColorModeSwitch";
 
 const Navbar = () => {
   // state
@@ -50,7 +55,7 @@ const Navbar = () => {
     <chakra.nav
       d="flex"
       bg={colorMode === "light" ? "white" : "#333333"}
-      px={{ base: 4, md: 32 }}
+      px={{ base: 4, md: 12 }}
       // h="118px"
       flexDir="column"
       justifyContent="center"
@@ -58,7 +63,7 @@ const Navbar = () => {
       top={0}
       w="100%"
       borderBottomWidth="1px"
-      py={{ base: 4, md: 8 }}
+      py={{ base: 4, md: 6 }}
       zIndex={100}
     >
       <Flex>
@@ -71,23 +76,38 @@ const Navbar = () => {
         >
           Folasewa ilori <br /> photography
         </Text> */}
-
-        <Image
-          my="auto"
-          w="170px"
-          maxH="62px"
-          // src="https://res.cloudinary.com/bolub/image/upload/v1610814703/folashewa_photography/IMG_5272.png"
-          src="./FolasebeansLogo.PNG"
-        />
+        <Link href="/">
+          <Image
+            my="auto"
+            w="140px"
+            cursor="pointer"
+            maxH="42px"
+            // src="https://res.cloudinary.com/bolub/image/upload/v1610814703/folashewa_photography/IMG_5272.png"
+            src="./FolasebeansLogo.PNG"
+          />
+        </Link>
 
         {/* desktop view */}
         <HStack
           my="auto"
           d={{ base: "none", md: "flex" }}
-          spacing={6}
-          textTransform="uppercase"
+          spacing={8}
+          // textTransform="uppercase"
           ml="auto"
         >
+          <Link passHref href="/">
+            <Text
+              fontSize="16px"
+              cursor="pointer"
+              fontWeight={500}
+              _hover={{
+                textDecor: "none",
+              }}
+            >
+              Home
+            </Text>
+          </Link>
+
           {navItems?.map((item, index) => {
             return (
               <Text
@@ -97,31 +117,47 @@ const Navbar = () => {
                   generalDisclosure.onOpen();
                 }}
                 ref={generalRef}
-                fontSize="sm"
+                fontSize="16px"
                 cursor="pointer"
-                fontWeight={800}
+                fontWeight={500}
               >
                 {item.label}
               </Text>
             );
           })}
 
-          <Link
-            // onClick={() => {
-            //   setToShow(item.id);
-            //   generalDisclosure.onOpen();
-            // }}
-            fontSize="sm"
-            cursor="pointer"
-            fontWeight={800}
-            isExternal
-            _hover={{
-              textDecor: "none",
-            }}
+          <Link passHref href="/gallery">
+            <Text
+              fontSize="16px"
+              cursor="pointer"
+              fontWeight={500}
+              _hover={{
+                textDecor: "none",
+              }}
+            >
+              Gallery
+            </Text>
+          </Link>
+
+          <ExtLink
+            _hover={{ textDecor: "none" }}
             href="https://19fjc2jot86.typeform.com/to/sRkOu5jd"
           >
-            Book us
-          </Link>
+            <Button
+              size="lg"
+              bg="brand.primary"
+              color="white"
+              colorScheme="primary"
+              fontSize="md"
+              fontWeight={900}
+            >
+              Book us
+            </Button>
+          </ExtLink>
+
+          {/* Color mode switch */}
+
+          <ColorModeSwitchMobile />
         </HStack>
 
         {/*==================== Mobile view for navbar ============================== */}

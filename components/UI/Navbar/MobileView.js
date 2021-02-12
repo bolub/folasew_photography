@@ -1,13 +1,15 @@
 import React from "react";
 
+import Link from "next/link";
+
 import {
   // chakra,
   // useColorMode,
-  DrawerCloseButton,
+  // DrawerCloseButton,
   Text,
   // Flex,
   VStack,
-  Link,
+  Link as ExtLink,
   Box,
   IconButton,
   useDisclosure,
@@ -71,6 +73,17 @@ const MobileView = ({ setToShow, aboutUsbtnRef, gd, gr }) => {
               Home
             </Text> */}
 
+            <Link href="/" passHref>
+              <Text
+                borderBottomWidth="1px"
+                pb={3}
+                cursor="pointer"
+                fontWeight={800}
+              >
+                Home
+              </Text>
+            </Link>
+
             <Text
               borderBottomWidth="1px"
               pb={3}
@@ -85,6 +98,17 @@ const MobileView = ({ setToShow, aboutUsbtnRef, gd, gr }) => {
             >
               About us
             </Text>
+
+            <Link href="/gallery" passHref>
+              <Text
+                borderBottomWidth="1px"
+                pb={3}
+                cursor="pointer"
+                fontWeight={800}
+              >
+                Gallery
+              </Text>
+            </Link>
 
             <Text
               borderBottomWidth="1px"
@@ -101,7 +125,7 @@ const MobileView = ({ setToShow, aboutUsbtnRef, gd, gr }) => {
               Photography Academy
             </Text>
 
-            <Link
+            <ExtLink
               borderBottomWidth="1px"
               pb={3}
               cursor="pointer"
@@ -113,7 +137,7 @@ const MobileView = ({ setToShow, aboutUsbtnRef, gd, gr }) => {
               href="https://19fjc2jot86.typeform.com/to/sRkOu5jd"
             >
               Book us
-            </Link>
+            </ExtLink>
 
             {/* <Text
               borderBottomWidth="1px"

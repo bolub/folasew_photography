@@ -84,7 +84,7 @@ export const ColorModeSwitchMobile = () => {
         // px={active === "dark" ? 6 : 4}
         // py={1}
       >
-        {colorMode === "dark" && (
+        {colorMode === "light" && (
           <svg
             width="24"
             height="24"
@@ -102,7 +102,7 @@ export const ColorModeSwitchMobile = () => {
           </svg>
         )}
 
-        {colorMode === "light" && (
+        {colorMode === "dark" && (
           <svg
             width="24"
             height="24"

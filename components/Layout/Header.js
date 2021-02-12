@@ -51,20 +51,19 @@ const Header = ({ getSingleImage }) => {
   return (
     <chakra.header
       d="flex"
-      pt={6}
+      pt={8}
       pb={{ base: 4, md: 6 }}
       w="100%"
-      d="flex"
       overflowX="auto"
       px={{ base: 4, md: 32 }}
     >
-      <HStack my="auto" spacing={{ base: 6, md: 10 }}>
+      <HStack my="auto" mx="auto" spacing={{ base: 6, md: 8 }}>
         {categories?.map((category, index) => {
           return (
             <Text
-              px={3}
-              fontSize={{ base: "sm", md: "md" }}
-              py={2}
+              px={2}
+              fontSize={{ base: "sm", md: "14px" }}
+              py={1}
               cursor="pointer"
               borderRadius="md"
               _hover={{
@@ -78,7 +77,7 @@ const Header = ({ getSingleImage }) => {
                 setCurrentCategory(category.value);
                 getSingleImage(category.value);
               }}
-              fontWeight="bold"
+              fontWeight={CurrentCategory === category.value && "bold"}
               key={index}
             >
               {category.label}
@@ -87,9 +86,9 @@ const Header = ({ getSingleImage }) => {
         })}
       </HStack>
 
-      <Box d={{ base: "none", md: "block" }} my="auto" ml="auto">
+      {/* <Box d={{ base: "none", md: "block" }} my="auto" ml="auto">
         <ColorModeSwitch />
-      </Box>
+      </Box> */}
     </chakra.header>
   );
 };
