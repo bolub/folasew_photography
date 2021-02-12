@@ -110,7 +110,7 @@ const Home = () => {
                   <Box
                     key={image.public_id}
                     w={{ base: "100%", md: "49%" }}
-                    mb={10}
+                    mb={6}
                     cursor="pointer"
                   >
                     {/* // <LazyLoadImage
@@ -135,7 +135,7 @@ const Home = () => {
                       borderWidth="1px"
                       w="100%"
                     />
-
+                    {/* 
                     <HStack mt={4}>
                       <svg
                         width="20"
@@ -161,7 +161,7 @@ const Home = () => {
                       >
                         {category}
                       </Text>
-                    </HStack>
+                    </HStack> */}
                   </Box>
                 );
               })}

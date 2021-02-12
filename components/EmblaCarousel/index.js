@@ -1,18 +1,40 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { PrevButton, NextButton } from "./EmblaCarouselButtons";
+import { useRecursiveTimeout } from "./useRecursiveTimeout";
 import { Box, Image } from "@chakra-ui/react";
 import { useEmblaCarousel } from "embla-carousel/react";
 // import { SRLWrapper } from "simple-react-lightbox";
 const PARALLAX_FACTOR = 1.2;
 
 const EmblaCarousel = ({ allImages }) => {
-  const [viewportRef, embla] = useEmblaCarousel();
+  const [viewportRef, embla] = useEmblaCarousel({ loop: true });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
   const [parallaxValues, setParallaxValues] = useState([]);
 
-  const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
-  const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
+  const AUTOPLAY_INTERVAL = 4000;
+  const autoplay = useCallback(() => {
+    if (!embla) return;
+    if (embla.canScrollNext()) {
+      embla.scrollNext();
+    } else {
+      embla.scrollTo(0);
+    }
+  }, [embla]);
+
+  const { play, stop } = useRecursiveTimeout(autoplay, AUTOPLAY_INTERVAL);
+
+  const scrollNext = useCallback(() => {
+    if (!embla) return;
+    embla.scrollNext();
+    stop();
+  }, [embla, stop]);
+
+  const scrollPrev = useCallback(() => {
+    if (!embla) return;
+    embla.scrollPrev();
+    stop();
+  }, [embla, stop]);
 
   const onSelect = useCallback(() => {
     if (!embla) return;
@@ -35,34 +57,15 @@ const EmblaCarousel = ({ allImages }) => {
     onSelect();
     embla.on("select", onSelect);
     embla.on("scroll", onScroll);
+    embla.on("pointerDown", stop);
   }, [embla, onSelect, onScroll]);
 
-  const options = {
-    // settings: {
-    //   overlayColor: "rgb(25, 136, 124)",
-    //   autoplaySpeed: 1500,
-    //   transitionSpeed: 900,
-    // },
-    buttons: {
-      showAutoplayButton: false,
-      showDownloadButton: false,
-      showThumbnailsButton: false,
-    },
-    // caption: {
-    //   captionColor: "#a6cfa5",
-    //   captionFontFamily: "nunito, sans-serif",
-    //   captionFontWeight: "300",
-    //   captionTextTransform: "uppercase",
-    // },
-  };
+  useEffect(() => {
+    play();
+  }, [play]);
 
   return (
-    <Box
-      // borderWidth="1px"
-      //  borderColor="brand.primary"
-      // p={1}
-      className="embla"
-    >
+    <Box className="embla">
       <div className="embla__viewport" ref={viewportRef}>
         <div className="embla__container">
           {allImages?.map((image, index) => {

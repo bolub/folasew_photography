@@ -54,7 +54,7 @@ const Navbar = () => {
   return (
     <chakra.nav
       d="flex"
-      // bg={colorMode === "light" ? "white" : "#333333"}
+      bg={colorMode === "light" ? "white" : "#333333"}
       px={{ base: 4, md: 12 }}
       // h="118px"
       flexDir="column"
@@ -145,6 +145,8 @@ const Navbar = () => {
           >
             <Button
               size="lg"
+              bg="brand.primary"
+              color="white"
               colorScheme="primary"
               fontSize="md"
               fontWeight={900}

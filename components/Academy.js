@@ -52,7 +52,14 @@ const Academy = () => {
         py={{ md: 6 }}
         mb={10}
       >
-        <Button size="lg" colorScheme="primary" fontSize="md" fontWeight="bold">
+        <Button
+          size="lg"
+          bg="brand.primary"
+          color="white"
+          colorScheme="primary"
+          fontSize="md"
+          fontWeight="bold"
+        >
           Register now
         </Button>
       </Center>

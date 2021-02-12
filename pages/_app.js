@@ -1,5 +1,7 @@
 import "../styles/globals.css";
 
+import Link from "next/link";
+
 // 1. import `ChakraProvider` component
 import {
   ChakraProvider,
@@ -40,7 +42,7 @@ function MyApp({ Component, pageProps }) {
           isAttached
         >
           <Menu autoSelect={false}>
-            <Tooltip label="Contact us" aria-label="contact">
+            <Tooltip label="Contact us" aria-label="contact us">
               <MenuButton
                 as={Button}
                 cursor="pointer"
@@ -56,7 +58,7 @@ function MyApp({ Component, pageProps }) {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor"
+                  stroke="#ffffff"
                 >
                   <path
                     strokeLinecap="round"
@@ -286,30 +288,32 @@ function MyApp({ Component, pageProps }) {
           </Menu>
 
           <Tooltip label="Testimonials" aria-label="testimonials">
-            <Button
-              // shadow="none"
-              bg="brand.primary"
-              borderRadius="full"
-              w="50px"
-              h="50px"
-              my="auto"
-              colorScheme="primary"
-              mr="-px"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="white"
+            <Link href="/#testimonials">
+              <Button
+                // shadow="none"
+                bg="brand.primary"
+                borderRadius="full"
+                w="50px"
+                h="50px"
+                my="auto"
+                colorScheme="primary"
+                mr="-px"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                />
-              </svg>
-            </Button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="white"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                  />
+                </svg>
+              </Button>
+            </Link>
           </Tooltip>
         </ButtonGroup>
 

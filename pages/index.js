@@ -3,12 +3,15 @@ import React from "react";
 // components
 import Layout from "../components/Layout";
 import EmblaCarousel from "../components/EmblaCarousel";
+import Testimonial from "../components/Testimonials";
 
 const Home = ({ allImages }) => {
   return (
     <div>
       <Layout padding={0} title="Home">
         <EmblaCarousel allImages={allImages} />
+
+        <Testimonial />
       </Layout>
     </div>
   );
