@@ -54,7 +54,7 @@ const Navbar = () => {
   return (
     <chakra.nav
       d="flex"
-      bg={colorMode === "light" ? "white" : "#333333"}
+      // bg={colorMode === "light" ? "white" : "#333333"}
       px={{ base: 4, md: 12 }}
       // h="118px"
       flexDir="column"
@@ -91,10 +91,23 @@ const Navbar = () => {
         <HStack
           my="auto"
           d={{ base: "none", md: "flex" }}
-          spacing={6}
+          spacing={8}
           // textTransform="uppercase"
           ml="auto"
         >
+          <Link passHref href="/">
+            <Text
+              fontSize="16px"
+              cursor="pointer"
+              fontWeight={500}
+              _hover={{
+                textDecor: "none",
+              }}
+            >
+              Home
+            </Text>
+          </Link>
+
           {navItems?.map((item, index) => {
             return (
               <Text

@@ -45,7 +45,7 @@ const CustomDrawer = ({
           height={height}
           maxHeight={maxHeight}
           borderTopRadius={borderTopRadius}
-          bg={colorMode === "light" ? "white" : "#333333"}
+          // bg={colorMode === "light" ? "white" : "#333333"}
         >
           <CloseButton
             onClick={disclosure.onClose}

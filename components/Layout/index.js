@@ -95,7 +95,7 @@ const Layout = ({
       <body
         style={{
           scrollBehavior: "smooth",
-          backgroundColor: colorMode === "light" ? "white" : "#333333",
+          // backgroundColor: colorMode === "light" ? "white" : "#333333",
           minHeight: "100vh",
         }}
       >

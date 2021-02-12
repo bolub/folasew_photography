@@ -1,15 +1,7 @@
 import React from "react";
 
 // chakra
-import {
-  Flex,
-  Center,
-  Text,
-  Box,
-  Image,
-  HStack,
-  useColorMode,
-} from "@chakra-ui/react";
+import { Flex, Center, Text, Box, Image, HStack } from "@chakra-ui/react";
 
 // import { LazyLoadImage } from "react-lazy-load-image-component";
 
