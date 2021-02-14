@@ -131,7 +131,7 @@ const Home = () => {
                       src={`https://res.cloudinary.com/folasewa/image/upload/${image.public_id}`}
                       h={{ base: "300px", md: "426px" }}
                       objectFit="cover"
-                      borderRadius="4px"
+                      // borderRadius="4px"
                       borderWidth="1px"
                       w="100%"
                     />
