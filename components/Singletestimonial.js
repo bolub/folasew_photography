@@ -45,7 +45,7 @@ const Singletestimonial = ({ testimonial }) => {
 
           <QuoteIcon
             color={useColorModeValue("gray.300", "gray.600")}
-            fontSize={{ base: "3xl", md: "4xl" }}
+            fontSize={{ base: "3xl" }}
           />
           {/* <Box mt="3">
               <Text as="cite" fontStyle="normal" fontWeight="bold">
@@ -56,7 +56,7 @@ const Singletestimonial = ({ testimonial }) => {
               </Text>
             </Box> */}
         </Box>
-        <Text fontSize={{ base: "md", md: "lg" }} fontWeight="medium" mt="6">
+        <Text fontSize={{ base: "md" }} fontWeight="medium" mt="6">
           {testimonial?.description}
         </Text>
       </Flex>

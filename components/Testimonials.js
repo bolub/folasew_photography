@@ -28,10 +28,10 @@ const Testimonial = () => {
   ];
 
   return (
-    <Box id="testimonials" as="section" mt={32} mb={20}>
+    <Box as="section" mb={20} id="testimonials">
       <Text
         fontWeight={800}
-        fontSize={{ base: "2xl", md: "3xl" }}
+        fontSize={{ base: "2xl" }}
         as="h2"
         textAlign="center"
       >

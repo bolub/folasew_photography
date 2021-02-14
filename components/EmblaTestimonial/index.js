@@ -28,7 +28,6 @@ const EmblaCarousel = ({ allImages }) => {
       <div className="embla__viewport" ref={viewportRef}>
         <div className="embla__container">
           {allImages.map((testimonial, index) => {
-            console.log(testimonial);
             return (
               <div className="embla__slide" key={index}>
                 <div className="embla__slide__inner">

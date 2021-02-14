@@ -1,9 +1,12 @@
 import React from "react";
 
+import { Box } from "@chakra-ui/react";
+
 // components
 import Layout from "../components/Layout";
 import EmblaCarousel from "../components/EmblaCarousel";
-import Testimonial from "../components/Testimonials";
+import Testimonials from "../components/Testimonials";
+import Intro from "../components/Intro";
 
 const Home = ({ allImages }) => {
   return (
@@ -11,7 +14,10 @@ const Home = ({ allImages }) => {
       <Layout padding={0} title="Home">
         <EmblaCarousel allImages={allImages} />
 
-        <Testimonial />
+        <Box px={{ base: 8, md: 12 }}>
+          <Intro />
+        </Box>
+        <Testimonials />
       </Layout>
     </div>
   );
