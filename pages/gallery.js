@@ -1,7 +1,15 @@
 import React from "react";
 
 // chakra
-import { Flex, Center, Text, Box, Image, HStack } from "@chakra-ui/react";
+import {
+  Flex,
+  Center,
+  Text,
+  Box,
+  Image,
+  HStack,
+  SimpleGrid,
+} from "@chakra-ui/react";
 
 // import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -87,22 +95,31 @@ const Home = () => {
     <div>
       <Layout withHeader title="Home" getSingleImage={getSingleImage}>
         <SRLWrapper options={options}>
-          <Flex
-            flexDir={{ base: "column", md: "row" }}
-            justifyContent="space-between"
-            mt={2}
-            flexWrap="wrap"
-            w="100%"
-          >
-            {loading && (
-              <Center minH="60vh" w="100%">
-                <BeatLoader color="#A47828" />
-              </Center>
-            )}
+          {loading && (
+            <Center minH="60vh" w="100%">
+              <BeatLoader color="#A47828" />
+            </Center>
+          )}
+          {!loading && allImages?.length === 0 && (
+            <Center flexDir="column" textAlign="center" minH="60vh" w="100%">
+              <Box mx="auto" w={{ md: "400px" }} height="290px">
+                <EmptyV2 />
+              </Box>
+              <Text mt={6}>Something's cooking...</Text>
+            </Center>
+          )}
 
-            {!loading &&
-              allImages?.length > 0 &&
-              allImages?.map((image) => {
+          {!loading && allImages?.length > 0 && (
+            <SimpleGrid
+              // flexDir={{ base: "column", md: "row" }}
+              // justifyContent="space-between"
+              mt={2}
+              // flexWrap="wrap"
+              w="100%"
+              columns={{ base: 1, md: 2, lg: 3 }}
+              spacing={4}
+            >
+              {allImages?.map((image) => {
                 const category = image.public_id
                   .replace("folashewa_photography/", "")
                   .split("/")[0];
@@ -110,8 +127,11 @@ const Home = () => {
                 return (
                   <Box
                     key={image.public_id}
-                    w={{ base: "100%", md: "49%" }}
+                    // w={{ base: "100%", md: "49%" }}
                     mb={6}
+                    borderWidth="1px"
+                    borderColor="primary.50"
+                    bg="primary.100"
                     cursor="pointer"
                   >
                     {/* // <LazyLoadImage
@@ -130,52 +150,17 @@ const Home = () => {
                 // /> */}
                     <Image
                       src={`https://res.cloudinary.com/folasewa/image/upload/${image.public_id}`}
-                      h={{ base: "300px", md: "426px" }}
+                      h={{ base: "400px", md: "426px" }}
                       objectFit="cover"
                       // borderRadius="4px"
-                      borderWidth="1px"
+                      // borderWidth="1px"
                       w="100%"
                     />
-                    {/* 
-                    <HStack mt={4}>
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.83333 5.83333H5.84167M5.83333 2.5H10C10.4267 2.5 10.8533 2.6625 11.1783 2.98833L17.0117 8.82167C17.3241 9.13421 17.4996 9.55806 17.4996 10C17.4996 10.4419 17.3241 10.8658 17.0117 11.1783L11.1783 17.0117C10.8658 17.3241 10.4419 17.4996 10 17.4996C9.55806 17.4996 9.13421 17.3241 8.82167 17.0117L2.98833 11.1783C2.83334 11.0238 2.71041 10.8401 2.6266 10.6379C2.5428 10.4357 2.49977 10.2189 2.5 10V5.83333C2.5 4.94928 2.85119 4.10143 3.47631 3.47631C4.10143 2.85119 4.94928 2.5 5.83333 2.5Z"
-                          stroke="#A47828"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokelinejoin="round"
-                        />
-                      </svg>
-
-                      <Text
-                        fontSize={{ base: "xs", md: "sm" }}
-                        textTransform="uppercase"
-                        fontWeight={900}
-                        color="brand.primary"
-                      >
-                        {category}
-                      </Text>
-                    </HStack> */}
                   </Box>
                 );
               })}
-
-            {!loading && allImages?.length === 0 && (
-              <Center flexDir="column" textAlign="center" minH="60vh" w="100%">
-                <Box mx="auto" w={{ md: "400px" }} height="290px">
-                  <EmptyV2 />
-                </Box>
-                <Text mt={6}>Something's cooking...</Text>
-              </Center>
-            )}
-          </Flex>
+            </SimpleGrid>
+          )}
         </SRLWrapper>
       </Layout>
     </div>
