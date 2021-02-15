@@ -12,6 +12,7 @@ import { SRLWrapper } from "simple-react-lightbox";
 import Layout from "../components/Layout";
 import { BeatLoader } from "react-spinners";
 import { EmptyV2 } from "../components/UI/Icons/Empty";
+import { getItem } from "../helpers/localStorage";
 // import Whatsapp from "../components/UI/Icons/Whatsapp";
 
 const Home = () => {
@@ -20,21 +21,21 @@ const Home = () => {
 
   // const { colorMode } = useColorMode();
 
-  const getAllImages = () => {
-    setLoading(true);
-    setAllImages([]);
-    fetch("https://res.cloudinary.com/folasewa/image/list/home.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setLoading(false);
-        setAllImages(data?.resources);
-      })
-      .catch((e) => {
-        console.log(e);
-        setLoading(false);
-        return null;
-      });
-  };
+  // const getAllImages = () => {
+  //   setLoading(true);
+  //   setAllImages([]);
+  //   fetch("https://res.cloudinary.com/folasewa/image/list/home.json")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setLoading(false);
+  //       setAllImages(data?.resources);
+  //     })
+  //     .catch((e) => {
+  //       console.log(e);
+  //       setLoading(false);
+  //       return null;
+  //     });
+  // };
 
   const getSingleImage = (category) => {
     setLoading(true);
@@ -53,7 +54,7 @@ const Home = () => {
   };
 
   React.useEffect(() => {
-    getAllImages();
+    getSingleImage(getItem("category"));
   }, []);
 
   //

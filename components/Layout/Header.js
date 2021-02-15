@@ -2,27 +2,27 @@ import React, { useState, useEffect } from "react";
 
 // Chakra
 import {
-  Container,
-  Box,
+  // Container,
+  // Box,
   chakra,
   Text,
   HStack,
-  Flex,
-  useColorMode,
+  // Flex,
+  // useColorMode,
 } from "@chakra-ui/react";
 
 // helpers
 import { setItem, getItem } from "../../helpers/localStorage";
 
 // components
-import ColorModeSwitch from "../UI/ColorModeSwitch";
+// import ColorModeSwitch from "../UI/ColorModeSwitch";
 
 const Header = ({ getSingleImage }) => {
   const categories = [
-    // {
-    //   label: "All",
-    //   value: "home",
-    // },
+    {
+      label: "All",
+      value: "home",
+    },
     {
       label: "Weddings",
       value: "weddings",
