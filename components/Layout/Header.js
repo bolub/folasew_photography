@@ -19,10 +19,10 @@ import { setItem, getItem } from "../../helpers/localStorage";
 
 const Header = ({ getSingleImage }) => {
   const categories = [
-    {
-      label: "All",
-      value: "home",
-    },
+    // {
+    //   label: "All",
+    //   value: "home",
+    // },
     {
       label: "Weddings",
       value: "weddings",
