@@ -29,6 +29,12 @@ import "./../styles/embla.css";
 function MyApp({ Component, pageProps }) {
   const { colorMode } = useColorMode();
 
+  const share = (link) => {
+    if (typeof window !== "undefined") {
+      window.open(link);
+    }
+  };
+
   return (
     <SimpleReactLightbox>
       <ChakraProvider theme={customTheme}>
@@ -49,8 +55,8 @@ function MyApp({ Component, pageProps }) {
                 colorScheme="primary"
                 bg="brand.primary"
                 borderRadius="full"
-                w="50px"
-                h="50px"
+                w="55px"
+                h="55px"
                 my="auto"
                 // shadow="none"
               >
