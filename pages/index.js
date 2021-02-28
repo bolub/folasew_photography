@@ -42,7 +42,7 @@ const Home = ({ allImages }) => {
         </Box>
 
         {/* gallert */}
-        <Box mt={20} px={{ base: 4, md: 20 }}>
+        <Box mt={{ base: 16, md: 20 }} px={{ base: 4, md: 20 }}>
           <SRLWrapper options={options}>
             {allImages?.length > 0 && (
               <SimpleGrid
@@ -60,14 +60,14 @@ const Home = ({ allImages }) => {
                       key={image.public_id}
                       // w={{ base: "100%", md: "49%" }}
                       // mb={6}
-                      borderWidth="1px"
-                      borderColor="primary.50"
+                      // borderWidth="1px"
+                      // borderColor="primary.50"
                       bg="primary.100"
                       cursor="pointer"
                     >
                       <Image
                         src={`https://res.cloudinary.com/folasewa/image/upload/${image.public_id}`}
-                        height={{ base: "350px", md: "400px" }}
+                        height={{ base: "auto", md: "400px" }}
                         objectFit="cover"
                         w="100%"
                       />
@@ -82,9 +82,8 @@ const Home = ({ allImages }) => {
         {/* <Box px={{ base: 8, md: 12 }}>
           <Intro />
         </Box> */}
-        <Box>
-          <Testimonials />
-        </Box>
+
+        <Testimonials />
       </Layout>
     </div>
   );

@@ -125,8 +125,8 @@ const Home = () => {
                     key={image.public_id}
                     // w={{ base: "100%", md: "49%" }}
                     // mb={6}
-                    borderWidth="1px"
-                    borderColor="primary.50"
+                    // borderWidth="1px"
+                    // borderColor="primary.50"
                     bg="primary.100"
                     cursor="pointer"
                   >
@@ -146,7 +146,7 @@ const Home = () => {
                 // /> */}
                     <Image
                       src={`https://res.cloudinary.com/folasewa/image/upload/${image.public_id}`}
-                      h={{ base: "350px", md: "426px" }}
+                      h={{ base: "auto", md: "426px" }}
                       objectFit="cover"
                       // borderRadius="4px"
                       // borderWidth="1px"
