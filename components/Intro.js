@@ -22,8 +22,8 @@ const Intro = () => {
       </Text>
 
       <Text mt={4}>
-        We're Nigerian based wedding and portrait photography brand. We offer a
-        blend between documentary, fine artistry and elegance.
+        We're a Nigerian based wedding and portrait photography brand. We offer
+        a blend between documentary, fine artistry and elegance.
         <br />
         We are happy you found us, we hope you enjoy your stay here.
       </Text>
