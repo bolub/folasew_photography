@@ -6,6 +6,11 @@ import {
   // chakra,
   // useColorMode,
   // DrawerCloseButton,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
   Text,
   // Flex,
   VStack,
@@ -18,6 +23,7 @@ import {
 // components
 import { ColorModeSwitchMobile } from "../ColorModeSwitch";
 import CustomDrawer from "../CustomDrawer";
+import { setItem } from "../../../helpers/localStorage";
 
 const MobileView = ({ setToShow, aboutUsbtnRef, gd, gr }) => {
   const sidebarDisclosure = useDisclosure();
@@ -99,7 +105,70 @@ const MobileView = ({ setToShow, aboutUsbtnRef, gd, gr }) => {
               About us
             </Text>
 
-            <Link href="/gallery" passHref>
+            <Accordion allowMultiple>
+              <AccordionItem borderTopWidth={0}>
+                <AccordionButton px={0}>
+                  <Box fontWeight={800} flex="1" textAlign="left">
+                    Gallery
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+                <AccordionPanel pb={4} px={0}>
+                  <Link
+                    onClick={() => {
+                      setItem("weddings");
+                    }}
+                    href="/gallery/?category=weddings"
+                    passHref
+                  >
+                    <Text
+                      fontSize="sm"
+                      mb={2}
+                      cursor="pointer"
+                      fontWeight={500}
+                    >
+                      Weddings
+                    </Text>
+                  </Link>
+
+                  <Link
+                    onClick={() => {
+                      setItem("portraits");
+                    }}
+                    href="/gallery/?category=portraits"
+                    passHref
+                  >
+                    <Text
+                      fontSize="sm"
+                      mb={2}
+                      cursor="pointer"
+                      fontWeight={500}
+                    >
+                      Portraits
+                    </Text>
+                  </Link>
+
+                  <Link
+                    onClick={() => {
+                      setItem("editorial");
+                    }}
+                    href="/gallery/?category=editorial"
+                    passHref
+                  >
+                    <Text
+                      fontSize="sm"
+                      mb={2}
+                      cursor="pointer"
+                      fontWeight={500}
+                    >
+                      Editorial/Beauty
+                    </Text>
+                  </Link>
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
+
+            {/* <Link href="/gallery" passHref>
               <Text
                 borderBottomWidth="1px"
                 pb={3}
@@ -108,7 +177,7 @@ const MobileView = ({ setToShow, aboutUsbtnRef, gd, gr }) => {
               >
                 Gallery
               </Text>
-            </Link>
+            </Link> */}
 
             <Text
               borderBottomWidth="1px"

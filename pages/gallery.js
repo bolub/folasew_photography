@@ -1,15 +1,8 @@
 import React from "react";
+import { useRouter } from "next/router";
 
 // chakra
-import {
-  Flex,
-  Center,
-  Text,
-  Box,
-  Image,
-  HStack,
-  SimpleGrid,
-} from "@chakra-ui/react";
+import { Center, Text, Box, Image, SimpleGrid } from "@chakra-ui/react";
 
 // import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -20,13 +13,15 @@ import { SRLWrapper } from "simple-react-lightbox";
 import Layout from "../components/Layout";
 import { BeatLoader } from "react-spinners";
 import { EmptyV2 } from "../components/UI/Icons/Empty";
-import { getItem } from "../helpers/localStorage";
+import { getItem, setItem } from "../helpers/localStorage";
 // import Whatsapp from "../components/UI/Icons/Whatsapp";
 
 const Home = () => {
   const [allImages, setAllImages] = React.useState();
   const [loading, setLoading] = React.useState(false);
 
+  const router = useRouter();
+  const { category } = router.query;
   // const { colorMode } = useColorMode();
 
   // const getAllImages = () => {
@@ -62,15 +57,15 @@ const Home = () => {
   };
 
   React.useEffect(() => {
-    getSingleImage(getItem("category"));
+    getSingleImage(category || getItem("category"));
   }, []);
 
   //
-  const share = (link) => {
-    if (typeof window !== "undefined") {
-      window.open(link);
-    }
-  };
+  // const share = (link) => {
+  //   if (typeof window !== "undefined") {
+  //     window.open(link);
+  //   }
+  // };
 
   const options = {
     // settings: {
