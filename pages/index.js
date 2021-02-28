@@ -67,7 +67,7 @@ const Home = ({ allImages }) => {
                     >
                       <Image
                         src={`https://res.cloudinary.com/folasewa/image/upload/${image.public_id}`}
-                        maxH={{ base: "350px", md: "400px" }}
+                        height={{ base: "350px", md: "400px" }}
                         objectFit="cover"
                         w="100%"
                       />
