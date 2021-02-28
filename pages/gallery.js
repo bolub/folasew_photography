@@ -123,7 +123,7 @@ const Home = () => {
                   <Box
                     key={image.public_id}
                     // w={{ base: "100%", md: "49%" }}
-                    mb={6}
+                    // mb={6}
                     borderWidth="1px"
                     borderColor="primary.50"
                     bg="primary.100"
