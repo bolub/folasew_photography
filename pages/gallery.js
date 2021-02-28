@@ -109,10 +109,11 @@ const Home = () => {
               // flexDir={{ base: "column", md: "row" }}
               // justifyContent="space-between"
               mt={2}
+              mb={12}
               // flexWrap="wrap"
               w="100%"
-              columns={{ base: 1, md: 2, lg: 3 }}
-              spacing={4}
+              columns={{ base: 2, md: 2, lg: 3 }}
+              spacing={{ base: 1, md: 4 }}
             >
               {allImages?.map((image) => {
                 const category = image.public_id
@@ -145,7 +146,7 @@ const Home = () => {
                 // /> */}
                     <Image
                       src={`https://res.cloudinary.com/folasewa/image/upload/${image.public_id}`}
-                      h={{ base: "400px", md: "426px" }}
+                      h={{ base: "350px", md: "426px" }}
                       objectFit="cover"
                       // borderRadius="4px"
                       // borderWidth="1px"

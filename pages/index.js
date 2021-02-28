@@ -37,12 +37,12 @@ const Home = ({ allImages }) => {
         {/* <EmblaCarousel allImages={allImages} /> */}
 
         {/* Introduction */}
-        <Box px={{ base: 6, md: 20 }}>
+        <Box px={{ base: 4, md: 20 }}>
           <Intro />
         </Box>
 
         {/* gallert */}
-        <Box mt={20} px={{ base: 6, md: 20 }}>
+        <Box mt={20} px={{ base: 4, md: 20 }}>
           <SRLWrapper options={options}>
             {allImages?.length > 0 && (
               <SimpleGrid
@@ -52,7 +52,7 @@ const Home = ({ allImages }) => {
                 // flexWrap="wrap"
                 w="100%"
                 columns={{ base: 2, md: 2, lg: 3 }}
-                spacing={4}
+                spacing={{ base: 1, md: 4 }}
               >
                 {allImages?.map((image) => {
                   return (
