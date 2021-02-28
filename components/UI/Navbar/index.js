@@ -126,7 +126,13 @@ const Navbar = () => {
             );
           })}
 
-          <Link passHref href="/gallery">
+          <Link
+            passHref
+            href="/gallery/?category=weddings"
+            onClick={() => {
+              setItem("weddings");
+            }}
+          >
             <Text
               fontSize="16px"
               cursor="pointer"

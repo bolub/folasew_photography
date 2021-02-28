@@ -1,15 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 // Chakra
-import {
-  // Container,
-  // Box,
-  chakra,
-  Text,
-  HStack,
-  // Flex,
-  // useColorMode,
-} from "@chakra-ui/react";
+import { chakra, Text, HStack } from "@chakra-ui/react";
 
 // helpers
 import { setItem, getItem } from "../../helpers/localStorage";

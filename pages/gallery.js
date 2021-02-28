@@ -13,7 +13,7 @@ import { SRLWrapper } from "simple-react-lightbox";
 import Layout from "../components/Layout";
 import { BeatLoader } from "react-spinners";
 import { EmptyV2 } from "../components/UI/Icons/Empty";
-import { getItem, setItem } from "../helpers/localStorage";
+import { getItem } from "../helpers/localStorage";
 // import Whatsapp from "../components/UI/Icons/Whatsapp";
 
 const Home = () => {
