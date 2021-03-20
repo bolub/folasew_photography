@@ -9,7 +9,7 @@ const Testimonial = () => {
       imageUrl:
         "https://res.cloudinary.com/folasewa/image/upload/v1613122255/testimonials/WhatsApp_Image_2021-02-12_at_9.34.39_AM_g9hl6u.jpg",
       description:
-        "We had a family shoot with fola and it was wonderful, everybody at the studio was welcoming and fola had a way of coercing my parents to make them comfortable and ignore their schedule cause of the shoot . When I saw the preview of our photos I gave him the nickname “Fola Extraordinaire “ he actually knew the perfect angles and gave us pictures made in heaven 🙌",
+        "We had a family shoot with fola and it was wonderful, everybody at the studio was welcoming and fola had a way of persuading my parents to make them comfortable and ignore their schedule cause of the shoot . When I saw the preview of our photos I gave him the nickname “Fola Extraordinaire “ he actually knew the perfect angles and gave us pictures made in heaven 🙌",
     },
 
     {
