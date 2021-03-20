@@ -34,6 +34,7 @@ const Testimonial = () => {
         fontSize={{ base: "2xl" }}
         as="h2"
         textAlign="center"
+        className="josefin"
       >
         Testimonials
       </Text>

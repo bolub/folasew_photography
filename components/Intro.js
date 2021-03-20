@@ -16,6 +16,7 @@ const Intro = () => {
         fontWeight={900}
         fontSize={{ base: "2xl", md: "3xl" }}
         as="h1"
+        className="josefin"
         // textAlign="center"
       >
         Welcome To Folasewa Ilori Photography

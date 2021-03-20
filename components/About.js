@@ -22,9 +22,10 @@ const AboutUs = ({}) => {
       <chakra.h2
         mt={10}
         mb={{ base: 6, md: 6 }}
-        fontSize={{ base: "3xl", md: "42px" }}
+        fontSize={{ base: "3xl", md: "32px" }}
         fontWeight={900}
         textAlign="center"
+        className="josefin"
       >
         About us
       </chakra.h2>
@@ -72,6 +73,7 @@ const AboutUs = ({}) => {
           fontSize={{ base: "", md: "xl" }}
           fontWeight={900}
           mb={0}
+          className="josefin"
           // textTransform="uppercase"
           // textAlign="center"
         >
@@ -134,6 +136,7 @@ const AboutUs = ({}) => {
           fontSize={{ base: "", md: "xl" }}
           fontWeight={900}
           mb={0}
+          className="josefin"
           // textTransform="uppercase"
           // textAlign="center"
         >

@@ -8,9 +8,10 @@ const Academy = () => {
       <chakra.h2
         mt={10}
         mb={{ base: 6, md: 10 }}
-        fontSize={{ base: "3xl", md: "42px" }}
+        fontSize={{ base: "3xl", md: "32px" }}
         fontWeight={900}
         textAlign="center"
+        className="josefin"
       >
         Photography Academy
       </chakra.h2>

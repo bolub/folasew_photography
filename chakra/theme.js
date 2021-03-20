@@ -35,7 +35,7 @@ const colors = {
 const styles = {
   global: {
     "html, body": {
-      fontFamily: "'DM Sans', sans-serif",
+      fontFamily: "'Nunito', sans-serif",
     },
   },
 };

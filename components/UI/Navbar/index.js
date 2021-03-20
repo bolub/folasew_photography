@@ -99,7 +99,7 @@ const Navbar = () => {
             <Text
               fontSize="16px"
               cursor="pointer"
-              fontWeight={500}
+              fontWeight={600}
               _hover={{
                 textDecor: "none",
               }}
@@ -119,7 +119,7 @@ const Navbar = () => {
                 ref={generalRef}
                 fontSize="16px"
                 cursor="pointer"
-                fontWeight={500}
+                fontWeight={600}
               >
                 {item.label}
               </Text>
@@ -136,7 +136,7 @@ const Navbar = () => {
             <Text
               fontSize="16px"
               cursor="pointer"
-              fontWeight={500}
+              fontWeight={600}
               _hover={{
                 textDecor: "none",
               }}
