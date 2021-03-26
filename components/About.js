@@ -165,7 +165,7 @@ const AboutUs = ({}) => {
 
               {/* title */}
               <Text color="brand.primary" fontSize="md">
-                Creative Director / Lead Photographer
+                The Creative Director / Lead Photographer
               </Text>
 
               {/* description */}
