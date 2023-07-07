@@ -20,5 +20,9 @@
     "react-lazy-load-image-component": "^1.6.0",
     "react-spinners": "^0.13.8",
     "simple-react-lightbox": "^3.6.9-0"
+  },
+  "engines": {
+    "npm": ">=8.0.0 <9.0.0",
+    "node": ">=16.0.0 <= 18.1.0"
   }
 }
