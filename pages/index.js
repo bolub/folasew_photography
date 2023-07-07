@@ -1,15 +1,9 @@
-import React from "react";
-
-import { Box, SimpleGrid, Image } from "@chakra-ui/react";
-
-// lightbox
-import { SRLWrapper } from "simple-react-lightbox";
-
-// components
-import Layout from "../components/Layout";
-// import EmblaCarousel from "../components/EmblaCarousel";
-import Testimonials from "../components/Testimonials";
-import Intro from "../components/Intro";
+import React from 'react';
+import { Box, SimpleGrid, Image } from '@chakra-ui/react';
+import { SRLWrapper } from 'simple-react-lightbox';
+import Layout from '../components/Layout';
+import Testimonials from '../components/Testimonials';
+import Intro from '../components/Intro';
 
 const Home = ({ allImages }) => {
   const options = {
@@ -33,24 +27,18 @@ const Home = ({ allImages }) => {
 
   return (
     <div>
-      <Layout padding={0} title="Home">
-        {/* <EmblaCarousel allImages={allImages} /> */}
-
-        {/* Introduction */}
+      <Layout padding={0} title='Home'>
         <Box px={{ base: 4, md: 20 }}>
           <Intro />
         </Box>
 
-        {/* gallert */}
         <Box mt={{ base: 16, md: 20 }} px={{ base: 4, md: 20 }}>
           <SRLWrapper options={options}>
             {allImages?.length > 0 && (
               <SimpleGrid
-                // flexDir={{ base: "column", md: "row" }}
-                // justifyContent="space-between"
                 mt={2}
                 // flexWrap="wrap"
-                w="100%"
+                w='100%'
                 columns={{ base: 2, md: 2, lg: 3 }}
                 spacing={{ base: 1, md: 4 }}
               >
@@ -62,14 +50,14 @@ const Home = ({ allImages }) => {
                       // mb={6}
                       // borderWidth="1px"
                       // borderColor="primary.50"
-                      bg="primary.100"
-                      cursor="pointer"
+                      bg='primary.100'
+                      cursor='pointer'
                     >
                       <Image
                         src={`https://res.cloudinary.com/folasewa/image/upload/${image.public_id}`}
-                        height={{ base: "170px", md: "400px" }}
-                        objectFit="cover"
-                        w="100%"
+                        height={{ base: '170px', md: '400px' }}
+                        objectFit='cover'
+                        w='100%'
                       />
                     </Box>
                   );
@@ -78,10 +66,6 @@ const Home = ({ allImages }) => {
             )}
           </SRLWrapper>
         </Box>
-
-        {/* <Box px={{ base: 8, md: 12 }}>
-          <Intro />
-        </Box> */}
 
         <Testimonials />
       </Layout>
@@ -94,7 +78,7 @@ export default Home;
 export const getStaticProps = async (context) => {
   try {
     const response = await fetch(
-      "https://res.cloudinary.com/folasewa/image/list/home.json"
+      'https://res.cloudinary.com/folasewa/image/list/home.json'
     ).then((response) => response.json());
 
     return {

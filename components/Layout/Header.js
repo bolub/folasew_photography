@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 // Chakra
-import { chakra, Text, HStack } from "@chakra-ui/react";
+import { chakra, Text, HStack } from '@chakra-ui/react';
 
 // helpers
-import { setItem, getItem } from "../../helpers/localStorage";
+import { setItem, getItem } from '../../helpers/localStorage';
 
 // components
 // import ColorModeSwitch from "../UI/ColorModeSwitch";
@@ -16,18 +16,18 @@ const Header = ({ getSingleImage }) => {
     //   value: "home",
     // },
     {
-      label: "Weddings",
-      value: "weddings",
+      label: 'Weddings',
+      value: 'weddings',
     },
 
     {
-      label: "Portraits",
-      value: "portraits",
+      label: 'Portraits',
+      value: 'portraits',
     },
 
     {
-      label: "Editorial/Beauty",
-      value: "editorial",
+      label: 'Editorial/Beauty',
+      value: 'editorial',
     },
   ];
 
@@ -37,39 +37,39 @@ const Header = ({ getSingleImage }) => {
   // const { colorMode } = useColorMode();
 
   useEffect(() => {
-    setCurrentCategory(getItem("category"));
+    setCurrentCategory(getItem('category'));
   }, [setItem]);
 
   return (
     <chakra.header
-      d="flex"
+      display='flex'
       pt={8}
       pb={{ base: 4, md: 6 }}
-      w="100%"
-      overflowX="auto"
+      w='100%'
+      overflowX='auto'
       px={{ base: 4, md: 32 }}
     >
-      <HStack my="auto" mx="auto" spacing={{ base: 6, md: 8 }}>
+      <HStack my='auto' mx='auto' spacing={{ base: 6, md: 8 }}>
         {categories?.map((category, index) => {
           return (
             <Text
               px={2}
-              fontSize={{ base: "sm", md: "14px" }}
+              fontSize={{ base: 'sm', md: '14px' }}
               py={1}
-              cursor="pointer"
-              borderRadius="md"
+              cursor='pointer'
+              borderRadius='md'
               _hover={{
-                bg: "#F2F2F2",
-                color: "#000000",
+                bg: '#F2F2F2',
+                color: '#000000',
               }}
-              bg={CurrentCategory === category.value && "#F2F2F2"}
-              color={CurrentCategory === category.value && "#000000"}
+              bg={CurrentCategory === category.value && '#F2F2F2'}
+              color={CurrentCategory === category.value && '#000000'}
               onClick={() => {
-                setItem("category", category.value);
+                setItem('category', category.value);
                 setCurrentCategory(category.value);
                 getSingleImage(category.value);
               }}
-              fontWeight={CurrentCategory === category.value && "bold"}
+              fontWeight={CurrentCategory === category.value && 'bold'}
               key={index}
             >
               {category.label}
@@ -78,7 +78,7 @@ const Header = ({ getSingleImage }) => {
         })}
       </HStack>
 
-      {/* <Box d={{ base: "none", md: "block" }} my="auto" ml="auto">
+      {/* <Box display={{ base: "none", md: "block" }} my="auto" ml="auto">
         <ColorModeSwitch />
       </Box> */}
     </chakra.header>

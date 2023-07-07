@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Text,
   Link,
@@ -9,10 +9,10 @@ import {
   Flex,
   useColorMode,
   SimpleGrid,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
 // data
-import { allClients } from "../data/clients";
+import { allClients } from '../data/clients';
 
 const AboutUs = ({}) => {
   const { colorMode } = useColorMode();
@@ -22,21 +22,21 @@ const AboutUs = ({}) => {
       <chakra.h2
         mt={10}
         mb={{ base: 6, md: 6 }}
-        fontSize={{ base: "3xl", md: "32px" }}
+        fontSize={{ base: '3xl', md: '32px' }}
         fontWeight={900}
-        textAlign="center"
-        className="josefin"
+        textAlign='center'
+        className='josefin'
       >
         About us
       </chakra.h2>
 
       {/* Some explanations */}
       <Box>
-        <Text mb={10} textAlign="center">
+        <Text mb={10} textAlign='center'>
           We are Nigerian based wedding and portrait photographers. We dedicate
           ourselves to telling love stories by freezing priceless moments in
-          destinations across the world. We offer a blend between{" "}
-          <Text as="span" color="brand.primary" fontWeight={800}>
+          destinations across the world. We offer a blend between{' '}
+          <Text as='span' color='brand.primary' fontWeight={800}>
             documentary, fine artistry and elegance.
           </Text>
         </Text>
@@ -67,13 +67,13 @@ const AboutUs = ({}) => {
       </Box>
 
       {/* Our clients */}
-      <Box mt={24} w="100%" d="flex" flexDir="column">
+      <Box mt={24} w='100%' display='flex' flexDir='column'>
         <chakra.h2
           // mb={{ base: 6, md: 10 }}
-          fontSize={{ base: "", md: "xl" }}
+          fontSize={{ base: '', md: 'xl' }}
           fontWeight={900}
           mb={0}
-          className="josefin"
+          className='josefin'
           // textTransform="uppercase"
           // textAlign="center"
         >
@@ -83,7 +83,7 @@ const AboutUs = ({}) => {
         <SimpleGrid
           // borderWidth="1px"
           // flexWrap="wrap"
-          w="100%"
+          w='100%'
           // justifyContent={{ base: "center" }}
           // spacing={0}
           // mx="auto"
@@ -96,21 +96,21 @@ const AboutUs = ({}) => {
                 key={client.name}
                 isExternal
                 href={client.websiteUrl}
-                my="auto"
-                mx={{ base: "auto", md: 0 }}
-                bg="white"
-                w="160px"
+                my='auto'
+                mx={{ base: 'auto', md: 0 }}
+                bg='white'
+                w='160px'
                 // w="180px"
                 // borderLeftWidth="1px"
                 // borderTopWidth={{ md: "1px" }}
                 // borderBottomWidth={{ md: "1px" }}
-                h={{ base: "auto", md: "200px" }}
+                h={{ base: 'auto', md: '200px' }}
                 mb={{ base: 8, md: 0 }}
                 // borderWidth="1px"
-                d="flex"
-                justifyContent="center"
-                alignItems="center"
-                my="auto"
+                display='flex'
+                justifyContent='center'
+                alignItems='center'
+                my='auto'
               >
                 <Image
                   // py={4}
@@ -118,10 +118,10 @@ const AboutUs = ({}) => {
                   // w="100%"
                   // sx={{ md: { filter: "grayscale(100%)", opacity: 0.5 } }}
                   // px={2}
-                  my="auto"
+                  my='auto'
                   // ml={client.name === "Gifted Moms" && 6}
                   src={client.imageUrl}
-                  className="faded__img"
+                  className='faded__img'
                 />
               </Link>
             );
@@ -130,13 +130,13 @@ const AboutUs = ({}) => {
       </Box>
 
       {/* The team */}
-      <Box mt={20} w="100%" d="flex" flexDir="column">
+      <Box mt={20} w='100%' display='flex' flexDir='column'>
         <chakra.h2
           // mb={{ base: 6, md: 10 }}
-          fontSize={{ base: "", md: "xl" }}
+          fontSize={{ base: '', md: 'xl' }}
           fontWeight={900}
           mb={0}
-          className="josefin"
+          className='josefin'
           // textTransform="uppercase"
           // textAlign="center"
         >
@@ -145,33 +145,33 @@ const AboutUs = ({}) => {
 
         <Box mt={12}>
           {/* Folasewa team */}
-          <Flex flexDir={{ base: "column", md: "row" }}>
+          <Flex flexDir={{ base: 'column', md: 'row' }}>
             {/* Image */}
             <Avatar
-              name="Folasewa Ilori"
-              src="https://res.cloudinary.com/bolub/image/upload/v1610782902/folashewa_photography/IMG_5671.jpg"
-              h="360px"
-              w="300px"
-              borderRadius="md"
+              name='Folasewa Ilori'
+              src='https://res.cloudinary.com/bolub/image/upload/v1610782902/folashewa_photography/IMG_5671.jpg'
+              h='360px'
+              w='300px'
+              borderRadius='md'
               mr={6}
               mb={{ base: 4, md: 0 }}
             />
 
             <Box>
               {/* name */}
-              <Text fontSize="lg" fontWeight="bolder">
+              <Text fontSize='lg' fontWeight='bolder'>
                 Folasewa Ilori
               </Text>
 
               {/* title */}
-              <Text color="brand.primary" fontSize="md">
+              <Text color='brand.primary' fontSize='md'>
                 The Creative Director / Lead Photographer
               </Text>
 
               {/* description */}
               <Text
                 mt={6}
-                color={colorMode === "dark" ? "gray.200" : "gray.500"}
+                color={colorMode === 'dark' ? 'gray.200' : 'gray.500'}
               >
                 Folasewa Ilori, a professional photographer specialised in
                 portraits and wedding photography has within the past 6+ years,
@@ -180,7 +180,7 @@ const AboutUs = ({}) => {
 
               <Text
                 mt={2}
-                color={colorMode === "dark" ? "gray.200" : "gray.500"}
+                color={colorMode === 'dark' ? 'gray.200' : 'gray.500'}
               >
                 He holds a degree in Economics from the University of Ado-Ekiti
                 (now EKSU) and Msc in Humanitarian and Refugee Studies from the

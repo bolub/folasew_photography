@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import Link from "next/link";
+import Link from 'next/link';
 
 import {
   chakra,
@@ -10,18 +10,17 @@ import {
   Button,
   HStack,
   useDisclosure,
-  Box,
   Image,
   Link as ExtLink,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
 // components
-import MobileView from "./MobileView";
-import AboutUs from "../../About";
-import CustomDrawer from "../CustomDrawer";
-import Contact from "../../Contact";
-import Academy from "../../Academy";
-import { ColorModeSwitchMobile } from "../ColorModeSwitch";
+import MobileView from './MobileView';
+import AboutUs from '../../About';
+import CustomDrawer from '../CustomDrawer';
+import Contact from '../../Contact';
+import Academy from '../../Academy';
+import { ColorModeSwitchMobile } from '../ColorModeSwitch';
 
 const Navbar = () => {
   // state
@@ -37,13 +36,13 @@ const Navbar = () => {
   // data
   const navItems = [
     {
-      label: "About us",
-      id: "about",
+      label: 'About us',
+      id: 'about',
     },
 
     {
-      label: "Photography Academy",
-      id: "academy",
+      label: 'Photography Academy',
+      id: 'academy',
     },
     // {
     //   label: "Contact",
@@ -53,55 +52,43 @@ const Navbar = () => {
 
   return (
     <chakra.nav
-      d="flex"
-      bg={colorMode === "light" ? "white" : "#333333"}
+      display='flex'
+      bg={colorMode === 'light' ? 'white' : '#333333'}
       px={{ base: 4, md: 12 }}
-      // h="118px"
-      flexDir="column"
-      justifyContent="center"
-      pos="sticky"
+      flexDir='column'
+      justifyContent='center'
+      pos='sticky'
       top={0}
-      w="100%"
-      borderBottomWidth="1px"
+      w='100%'
+      borderBottomWidth='1px'
       py={{ base: 4, md: 6 }}
       zIndex={100}
     >
       <Flex>
-        {/* <Text
-          my="auto"
-          textTransform="uppercase"
-          color="brand.primary"
-          fontWeight={900}
-          fontSize={{ base: "sm", md: "md" }}
-        >
-          Folasewa ilori <br /> photography
-        </Text> */}
-        <Link href="/">
+        <Link href='/'>
           <Image
-            my="auto"
-            w="140px"
-            cursor="pointer"
-            maxH="42px"
-            // src="https://res.cloudinary.com/bolub/image/upload/v1610814703/folashewa_photography/IMG_5272.png"
-            src="./FolasebeansLogo.PNG"
+            my='auto'
+            w='140px'
+            cursor='pointer'
+            maxH='42px'
+            src='./FolasebeansLogo.PNG'
           />
         </Link>
 
         {/* desktop view */}
         <HStack
-          my="auto"
-          d={{ base: "none", md: "flex" }}
+          my='auto'
+          display={{ base: 'none', md: 'flex' }}
           spacing={8}
-          // textTransform="uppercase"
-          ml="auto"
+          ml='auto'
         >
-          <Link passHref href="/">
+          <Link passHref href='/'>
             <Text
-              fontSize="16px"
-              cursor="pointer"
+              fontSize='16px'
+              cursor='pointer'
               fontWeight={600}
               _hover={{
-                textDecor: "none",
+                textDecor: 'none',
               }}
             >
               Home
@@ -117,8 +104,8 @@ const Navbar = () => {
                   generalDisclosure.onOpen();
                 }}
                 ref={generalRef}
-                fontSize="16px"
-                cursor="pointer"
+                fontSize='16px'
+                cursor='pointer'
                 fontWeight={600}
               >
                 {item.label}
@@ -128,17 +115,17 @@ const Navbar = () => {
 
           <Link
             passHref
-            href="/gallery/?category=weddings"
+            href='/gallery/?category=weddings'
             onClick={() => {
-              setItem("weddings");
+              setItem('weddings');
             }}
           >
             <Text
-              fontSize="16px"
-              cursor="pointer"
+              fontSize='16px'
+              cursor='pointer'
               fontWeight={600}
               _hover={{
-                textDecor: "none",
+                textDecor: 'none',
               }}
             >
               Gallery
@@ -146,15 +133,15 @@ const Navbar = () => {
           </Link>
 
           <ExtLink
-            _hover={{ textDecor: "none" }}
-            href="https://19fjc2jot86.typeform.com/to/sRkOu5jd"
+            _hover={{ textDecor: 'none' }}
+            href='https://19fjc2jot86.typeform.com/to/sRkOu5jd'
           >
             <Button
-              size="lg"
-              bg="brand.primary"
-              color="white"
-              colorScheme="primary"
-              fontSize="md"
+              size='lg'
+              bg='brand.primary'
+              color='white'
+              colorScheme='primary'
+              fontSize='md'
               fontWeight={900}
             >
               Book us
@@ -162,7 +149,6 @@ const Navbar = () => {
           </ExtLink>
 
           {/* Color mode switch */}
-
           <ColorModeSwitchMobile />
         </HStack>
 
@@ -176,14 +162,14 @@ const Navbar = () => {
       </Flex>
 
       <CustomDrawer
-        placement="bottom"
+        placement='bottom'
         disclosure={generalDisclosure}
         btnRef={generalRef}
-        height={{ base: "80vh", md: "95vh" }}
+        height={{ base: '80vh', md: '95vh' }}
       >
-        {toShow === "academy" && <Academy />}
-        {toShow === "about" && <AboutUs />}
-        {toShow === "contact" && <Contact />}
+        {toShow === 'academy' && <Academy />}
+        {toShow === 'about' && <AboutUs />}
+        {toShow === 'contact' && <Contact />}
       </CustomDrawer>
     </chakra.nav>
   );
