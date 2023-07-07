@@ -1,28 +1,22 @@
-import React from "react";
-import { Box, Text, Button, Link } from "@chakra-ui/react";
+import React from 'react';
+import { Box, Text, Button, Link } from '@chakra-ui/react';
 
 const Intro = () => {
   return (
     <Box
       // w={{ md: "80%" }}
-      textAlign="center"
-      as="section"
+      textAlign='center'
+      as='section'
       pt={{ base: 16, md: 24 }}
       // pb={48}
       // mt={32}
       // mb={20}
     >
-      <Text
-        fontWeight={900}
-        fontSize={{ base: "2xl", md: "3xl" }}
-        as="h1"
-        className="josefin"
-        // textAlign="center"
-      >
-        Welcome To Folasewa Ilori Photography
+      <Text fontWeight={700} fontSize={{ base: '3xl', md: '5xl' }} as='h1'>
+        Folasewa Ilori Photography
       </Text>
 
-      <Text mt={4}>
+      <Text fontSize='lg' mt={4}>
         We're a Nigerian based wedding and portrait photography brand. We offer
         a blend between documentary, fine artistry and elegance.
         <br />
@@ -30,53 +24,39 @@ const Intro = () => {
       </Text>
 
       {/* <Link> */}
-      <Button
-        href="#testimonials"
+      {/* <Button
+        href='#testimonials'
         as={Link}
-        borderBottomWidth="1px"
+        borderBottomWidth='1px'
         pb={1}
-        cursor="pointer"
-        colorScheme="primary"
-        // borderBottomColor="brand.primary"
-        variant="ghost"
-        borderRadius="none"
-        // color="brand.primary"
+        cursor='pointer'
+        colorScheme='primary'
+        variant='ghost'
+        borderRadius='none'
         mt={8}
         pl={2}
-        // d="inline-flex"
       >
         <Text>
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            width="30"
-            height="30"
-            fill="currentColor"
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 0 20 20'
+            width='30'
+            height='30'
+            fill='currentColor'
           >
             <path
-              fillRule="evenodd"
-              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
-              clipRule="evenodd"
+              fillRule='evenodd'
+              d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z'
+              clipRule='evenodd'
             />
           </svg>
         </Text>
 
-        <Text ml={2} fontSize="16px" fontWeight="bold">
+        <Text ml={2} fontSize='16px' fontWeight='bold'>
           Our Testimonials
         </Text>
-      </Button>
-      {/* </Link> */}
-
-      {/* <Button
-        size="lg"
-        bg="brand.primary"
-        color="white"
-        colorScheme="primary"
-        fontSize="md"
-        fontWeight={900}
-      >
-        Book us
       </Button> */}
+      {/* </Link> */}
     </Box>
   );
 };

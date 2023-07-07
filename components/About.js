@@ -7,86 +7,49 @@ import {
   chakra,
   Avatar,
   Flex,
-  useColorMode,
   SimpleGrid,
 } from '@chakra-ui/react';
 
-// data
 import { allClients } from '../data/clients';
 
-const AboutUs = ({}) => {
-  const { colorMode } = useColorMode();
-
+const AboutUs = () => {
   return (
     <Box px={{ base: 5, md: 52 }} mb={8}>
       <chakra.h2
         mt={10}
         mb={{ base: 6, md: 6 }}
         fontSize={{ base: '3xl', md: '32px' }}
-        fontWeight={900}
+        fontWeight={600}
         textAlign='center'
-        className='josefin'
       >
         About us
       </chakra.h2>
 
       {/* Some explanations */}
       <Box>
-        <Text mb={10} textAlign='center'>
+        <Text mb={10} textAlign='center' fontSize='18px'>
           We are Nigerian based wedding and portrait photographers. We dedicate
           ourselves to telling love stories by freezing priceless moments in
           destinations across the world. We offer a blend between{' '}
-          <Text as='span' color='brand.primary' fontWeight={800}>
+          <Text as='span' color='brand.primary'>
             documentary, fine artistry and elegance.
           </Text>
         </Text>
-        {/* <Text mb={10}>
-          Folasewa Ilori photography cuts across{" "}
-          <Text as="span" color="brand.primary" fontWeight={800}>
-            Wedding, Portrait, Beauty/Editorials and Event(s)
-          </Text>{" "}
-          Photography with over{" "}
-          <Text as="span" fontWeight={800}>
-            7 years
-          </Text>{" "}
-          experience.
-        </Text>
-
-        <Text mb={10}>
-          At Folasewa Ilori Photography our Focus is YOU! YES YOU! (Our
-          prospective client). We want to leave you with an experience that
-          would linger on forever by putting smiles on your faces.
-        </Text>
-
-        <Text>
-          {" "}
-          We have worked with brands across Africa especially in Nigeria and we
-          are known for Creativity, Creating a very good working environment and
-          our top notch delivery!
-        </Text> */}
       </Box>
 
       {/* Our clients */}
       <Box mt={24} w='100%' display='flex' flexDir='column'>
         <chakra.h2
-          // mb={{ base: 6, md: 10 }}
-          fontSize={{ base: '', md: 'xl' }}
-          fontWeight={900}
-          mb={0}
-          className='josefin'
-          // textTransform="uppercase"
-          // textAlign="center"
+          fontSize={{ base: 'lg', md: 'lg' }}
+          fontWeight={700}
+          mb={8}
+          textTransform='uppercase'
         >
           Our Clients
         </chakra.h2>
 
         <SimpleGrid
-          // borderWidth="1px"
-          // flexWrap="wrap"
           w='100%'
-          // justifyContent={{ base: "center" }}
-          // spacing={0}
-          // mx="auto"
           mt={{ base: 12, md: 0 }}
           columns={{ base: 1, lg: 3 }}
         >
@@ -100,29 +63,13 @@ const AboutUs = ({}) => {
                 mx={{ base: 'auto', md: 0 }}
                 bg='white'
                 w='160px'
-                // w="180px"
-                // borderLeftWidth="1px"
-                // borderTopWidth={{ md: "1px" }}
-                // borderBottomWidth={{ md: "1px" }}
                 h={{ base: 'auto', md: '200px' }}
                 mb={{ base: 8, md: 0 }}
-                // borderWidth="1px"
                 display='flex'
                 justifyContent='center'
                 alignItems='center'
-                my='auto'
               >
-                <Image
-                  // py={4}
-                  // bg="white"
-                  // w="100%"
-                  // sx={{ md: { filter: "grayscale(100%)", opacity: 0.5 } }}
-                  // px={2}
-                  my='auto'
-                  // ml={client.name === "Gifted Moms" && 6}
-                  src={client.imageUrl}
-                  className='faded__img'
-                />
+                <Image my='auto' src={client.imageUrl} className='faded__img' />
               </Link>
             );
           })}
@@ -132,19 +79,15 @@ const AboutUs = ({}) => {
       {/* The team */}
       <Box mt={20} w='100%' display='flex' flexDir='column'>
         <chakra.h2
-          // mb={{ base: 6, md: 10 }}
-          fontSize={{ base: '', md: 'xl' }}
-          fontWeight={900}
-          mb={0}
-          className='josefin'
-          // textTransform="uppercase"
-          // textAlign="center"
+          fontSize={{ base: 'lg', md: 'lg' }}
+          fontWeight={700}
+          mb={8}
+          textTransform='uppercase'
         >
           The Team
         </chakra.h2>
 
-        <Box mt={12}>
-          {/* Folasewa team */}
+        <Box>
           <Flex flexDir={{ base: 'column', md: 'row' }}>
             {/* Image */}
             <Avatar
@@ -159,19 +102,20 @@ const AboutUs = ({}) => {
 
             <Box>
               {/* name */}
-              <Text fontSize='lg' fontWeight='bolder'>
+              <Text fontSize='24px' fontWeight='bolder'>
                 Folasewa Ilori
               </Text>
 
               {/* title */}
-              <Text color='brand.primary' fontSize='md'>
+              <Text color='brand.primary' fontSize='18px' fontWeight='medium'>
                 The Creative Director / Lead Photographer
               </Text>
 
               {/* description */}
               <Text
                 mt={6}
-                color={colorMode === 'dark' ? 'gray.200' : 'gray.500'}
+                // color={colorMode === 'dark' ? 'gray.200' : 'gray.500'}
+                fontSize='18px'
               >
                 Folasewa Ilori, a professional photographer specialised in
                 portraits and wedding photography has within the past 6+ years,
@@ -180,7 +124,8 @@ const AboutUs = ({}) => {
 
               <Text
                 mt={2}
-                color={colorMode === 'dark' ? 'gray.200' : 'gray.500'}
+                // color={colorMode === 'dark' ? 'gray.200' : 'gray.500'}
+                fontSize='18px'
               >
                 He holds a degree in Economics from the University of Ado-Ekiti
                 (now EKSU) and Msc in Humanitarian and Refugee Studies from the

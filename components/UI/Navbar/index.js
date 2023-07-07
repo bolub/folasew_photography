@@ -44,23 +44,17 @@ const Navbar = () => {
       label: 'Photography Academy',
       id: 'academy',
     },
-    // {
-    //   label: "Contact",
-    //   id: "contact",
-    // },
   ];
 
   return (
     <chakra.nav
       display='flex'
-      bg={colorMode === 'light' ? 'white' : '#333333'}
       px={{ base: 4, md: 12 }}
       flexDir='column'
       justifyContent='center'
       pos='sticky'
       top={0}
       w='100%'
-      borderBottomWidth='1px'
       py={{ base: 4, md: 6 }}
       zIndex={100}
     >
@@ -106,24 +100,18 @@ const Navbar = () => {
                 ref={generalRef}
                 fontSize='16px'
                 cursor='pointer'
-                fontWeight={600}
+                fontWeight={500}
               >
                 {item.label}
               </Text>
             );
           })}
 
-          <Link
-            passHref
-            href='/gallery/?category=weddings'
-            onClick={() => {
-              setItem('weddings');
-            }}
-          >
+          <Link passHref href='/gallery/?category=weddings'>
             <Text
               fontSize='16px'
               cursor='pointer'
-              fontWeight={600}
+              fontWeight={500}
               _hover={{
                 textDecor: 'none',
               }}
@@ -137,12 +125,10 @@ const Navbar = () => {
             href='https://19fjc2jot86.typeform.com/to/sRkOu5jd'
           >
             <Button
-              size='lg'
               bg='brand.primary'
               color='white'
               colorScheme='primary'
               fontSize='md'
-              fontWeight={900}
             >
               Book us
             </Button>

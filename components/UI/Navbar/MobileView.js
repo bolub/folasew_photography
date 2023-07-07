@@ -177,7 +177,6 @@ const MobileView = ({ setToShow, aboutUsbtnRef, gd, gr }) => {
               borderBottomWidth='1px'
               pb={3}
               cursor='pointer'
-              fontWeight={800}
               isExternal
               _hover={{
                 textDecor: 'none',

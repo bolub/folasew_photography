@@ -11,10 +11,6 @@ import { setItem, getItem } from '../../helpers/localStorage';
 
 const Header = ({ getSingleImage }) => {
   const categories = [
-    // {
-    //   label: "All",
-    //   value: "home",
-    // },
     {
       label: 'Weddings',
       value: 'weddings',
@@ -28,6 +24,10 @@ const Header = ({ getSingleImage }) => {
     {
       label: 'Editorial/Beauty',
       value: 'editorial',
+    },
+    {
+      label: 'Others',
+      value: 'others',
     },
   ];
 
@@ -49,15 +49,15 @@ const Header = ({ getSingleImage }) => {
       overflowX='auto'
       px={{ base: 4, md: 32 }}
     >
-      <HStack my='auto' mx='auto' spacing={{ base: 6, md: 8 }}>
+      <HStack my='auto' mx='auto' spacing={3}>
         {categories?.map((category, index) => {
           return (
             <Text
-              px={2}
-              fontSize={{ base: 'sm', md: '14px' }}
-              py={1}
+              px={4}
+              fontSize={{ base: '14px', sm: '16px' }}
+              textTransform='uppercase'
+              py={2}
               cursor='pointer'
-              borderRadius='md'
               _hover={{
                 bg: '#F2F2F2',
                 color: '#000000',
@@ -69,8 +69,11 @@ const Header = ({ getSingleImage }) => {
                 setCurrentCategory(category.value);
                 getSingleImage(category.value);
               }}
-              fontWeight={CurrentCategory === category.value && 'bold'}
+              fontWeight={
+                CurrentCategory === category.value ? 'bold' : 'semibold'
+              }
               key={index}
+              transition='all .2s'
             >
               {category.label}
             </Text>
