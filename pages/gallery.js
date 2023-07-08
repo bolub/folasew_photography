@@ -7,7 +7,7 @@ import { BeatLoader } from 'react-spinners';
 import { EmptyV2 } from '../components/UI/Icons/Empty';
 import { getItem } from '../helpers/localStorage';
 
-const Home = () => {
+const Gallery = () => {
   const [allImages, setAllImages] = React.useState();
   const [loading, setLoading] = React.useState(false);
 
@@ -93,4 +93,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Gallery;

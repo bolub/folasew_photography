@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
-// Chakra
 import { chakra, Text, HStack } from '@chakra-ui/react';
-
-// helpers
 import { setItem, getItem } from '../../helpers/localStorage';
-
-// components
-// import ColorModeSwitch from "../UI/ColorModeSwitch";
 
 const Header = ({ getSingleImage }) => {
   const categories = [
@@ -32,9 +25,6 @@ const Header = ({ getSingleImage }) => {
   ];
 
   const [CurrentCategory, setCurrentCategory] = useState();
-
-  // color mode
-  // const { colorMode } = useColorMode();
 
   useEffect(() => {
     setCurrentCategory(getItem('category'));
@@ -80,10 +70,6 @@ const Header = ({ getSingleImage }) => {
           );
         })}
       </HStack>
-
-      {/* <Box display={{ base: "none", md: "block" }} my="auto" ml="auto">
-        <ColorModeSwitch />
-      </Box> */}
     </chakra.header>
   );
 };

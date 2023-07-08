@@ -1,33 +1,22 @@
 import React from 'react';
-import {
-  Text,
-  Link,
-  Image,
-  Box,
-  chakra,
-  Avatar,
-  Flex,
-  SimpleGrid,
-} from '@chakra-ui/react';
+import { Text, Link, Image, Box, chakra, Avatar, Flex } from '@chakra-ui/react';
 
 import { allClients } from '../data/clients';
 
 const AboutUs = () => {
   return (
-    <Box px={{ base: 5, md: 52 }} mb={8}>
-      <chakra.h2
-        mt={10}
-        mb={{ base: 6, md: 6 }}
-        fontSize={{ base: '3xl', md: '32px' }}
-        fontWeight={600}
-        textAlign='center'
-      >
-        About us
-      </chakra.h2>
+    <Box>
+      <chakra.section pt='64px' w='full' maxW='900px' mx='auto'>
+        <Text
+          textAlign='center'
+          fontWeight={700}
+          fontSize={{ base: '3xl', md: '5xl' }}
+          as='h1'
+        >
+          About us
+        </Text>
 
-      {/* Some explanations */}
-      <Box>
-        <Text mb={10} textAlign='center' fontSize='18px'>
+        <Text mt='20px' textAlign='center' fontSize='18px'>
           We are Nigerian based wedding and portrait photographers. We dedicate
           ourselves to telling love stories by freezing priceless moments in
           destinations across the world. We offer a blend between{' '}
@@ -35,23 +24,26 @@ const AboutUs = () => {
             documentary, fine artistry and elegance.
           </Text>
         </Text>
-      </Box>
+      </chakra.section>
 
       {/* Our clients */}
-      <Box mt={24} w='100%' display='flex' flexDir='column'>
-        <chakra.h2
-          fontSize={{ base: 'lg', md: 'lg' }}
-          fontWeight={700}
-          mb={8}
-          textTransform='uppercase'
-        >
-          Our Clients
-        </chakra.h2>
-
-        <SimpleGrid
-          w='100%'
-          mt={{ base: 12, md: 0 }}
-          columns={{ base: 1, lg: 3 }}
+      <chakra.section
+        mt={{ base: 16, md: 32 }}
+        w='full'
+        display='flex'
+        flexDir='column'
+      >
+        <Flex
+          gap={{ base: '10px', md: '40px' }}
+          mx='auto'
+          rounded='lg'
+          px='32px'
+          py='32px'
+          bgColor='primary.100'
+          alignItems='center'
+          justifyContent='center'
+          w='full'
+          flexWrap='wrap'
         >
           {allClients?.map((client) => {
             return (
@@ -59,12 +51,7 @@ const AboutUs = () => {
                 key={client.name}
                 isExternal
                 href={client.websiteUrl}
-                my='auto'
-                mx={{ base: 'auto', md: 0 }}
-                bg='white'
-                w='160px'
-                h={{ base: 'auto', md: '200px' }}
-                mb={{ base: 8, md: 0 }}
+                maxW={{ base: '130px', md: '180px' }}
                 display='flex'
                 justifyContent='center'
                 alignItems='center'
@@ -73,28 +60,27 @@ const AboutUs = () => {
               </Link>
             );
           })}
-        </SimpleGrid>
-      </Box>
+        </Flex>
+      </chakra.section>
 
       {/* The team */}
-      <Box mt={20} w='100%' display='flex' flexDir='column'>
-        <chakra.h2
-          fontSize={{ base: 'lg', md: 'lg' }}
-          fontWeight={700}
-          mb={8}
-          textTransform='uppercase'
-        >
-          The Team
-        </chakra.h2>
-
+      <chakra.section
+        mt={{ base: 16, md: 32 }}
+        mb={32}
+        w='full'
+        maxW='900px'
+        mx='auto'
+        display='flex'
+        flexDir='column'
+      >
         <Box>
           <Flex flexDir={{ base: 'column', md: 'row' }}>
             {/* Image */}
             <Avatar
               name='Folasewa Ilori'
               src='https://res.cloudinary.com/bolub/image/upload/v1610782902/folashewa_photography/IMG_5671.jpg'
-              h='360px'
-              w='300px'
+              h={{ base: '320px', md: '360px' }}
+              w={{ base: 'auto', md: '300px' }}
               borderRadius='md'
               mr={6}
               mb={{ base: 4, md: 0 }}
@@ -107,26 +93,18 @@ const AboutUs = () => {
               </Text>
 
               {/* title */}
-              <Text color='brand.primary' fontSize='18px' fontWeight='medium'>
+              <Text color='brand.primary' fontSize='20px' fontWeight='medium'>
                 The Creative Director / Lead Photographer
               </Text>
 
               {/* description */}
-              <Text
-                mt={6}
-                // color={colorMode === 'dark' ? 'gray.200' : 'gray.500'}
-                fontSize='18px'
-              >
+              <Text mt={6} fontSize='18px'>
                 Folasewa Ilori, a professional photographer specialised in
                 portraits and wedding photography has within the past 6+ years,
                 worked and collaborated with various commercial brands.
               </Text>
 
-              <Text
-                mt={2}
-                // color={colorMode === 'dark' ? 'gray.200' : 'gray.500'}
-                fontSize='18px'
-              >
+              <Text mt={5} fontSize='18px'>
                 He holds a degree in Economics from the University of Ado-Ekiti
                 (now EKSU) and Msc in Humanitarian and Refugee Studies from the
                 University of Ibadan. This attests to his pursuit of excellence
@@ -137,7 +115,7 @@ const AboutUs = () => {
             </Box>
           </Flex>
         </Box>
-      </Box>
+      </chakra.section>
     </Box>
   );
 };

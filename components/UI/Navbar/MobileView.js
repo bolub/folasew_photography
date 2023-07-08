@@ -21,7 +21,7 @@ import { ColorModeSwitchMobile } from '../ColorModeSwitch';
 import CustomDrawer from '../CustomDrawer';
 import { setItem } from '../../../helpers/localStorage';
 
-const MobileView = ({ setToShow, aboutUsbtnRef, gd, gr }) => {
+const MobileView = () => {
   const sidebarDisclosure = useDisclosure();
   const sidebarBtnRef = React.useRef();
 
@@ -69,20 +69,16 @@ const MobileView = ({ setToShow, aboutUsbtnRef, gd, gr }) => {
               </Text>
             </Link>
 
-            <Text
-              borderBottomWidth='1px'
-              pb={3}
-              cursor='pointer'
-              fontWeight={800}
-              ref={gr}
-              onClick={() => {
-                sidebarDisclosure.onClose();
-                gd.onOpen();
-                setToShow('about');
-              }}
-            >
-              About us
-            </Text>
+            <Link href='/about' passHref>
+              <Text
+                borderBottomWidth='1px'
+                pb={3}
+                cursor='pointer'
+                fontWeight={800}
+              >
+                About us
+              </Text>
+            </Link>
 
             <Accordion allowMultiple>
               <AccordionItem borderTopWidth={0}>
@@ -147,31 +143,16 @@ const MobileView = ({ setToShow, aboutUsbtnRef, gd, gr }) => {
               </AccordionItem>
             </Accordion>
 
-            {/* <Link href="/gallery" passHref>
+            <Link href='/academy' passHref>
               <Text
-                borderBottomWidth="1px"
+                borderBottomWidth='1px'
                 pb={3}
-                cursor="pointer"
+                cursor='pointer'
                 fontWeight={800}
               >
-                Gallery
+                Photography Academy
               </Text>
-            </Link> */}
-
-            <Text
-              borderBottomWidth='1px'
-              pb={3}
-              cursor='pointer'
-              fontWeight={800}
-              ref={gr}
-              onClick={() => {
-                sidebarDisclosure.onClose();
-                gd.onOpen();
-                setToShow('academy');
-              }}
-            >
-              Photography Academy
-            </Text>
+            </Link>
 
             <ExtLink
               borderBottomWidth='1px'

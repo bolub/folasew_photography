@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 import {
   chakra,
-  useColorMode,
   Text,
   Flex,
   Button,
@@ -26,25 +25,8 @@ const Navbar = () => {
   // state
   const [toShow, setToShow] = useState();
 
-  // color mode
-  const { colorMode } = useColorMode();
-
-  // general
   const generalDisclosure = useDisclosure();
   const generalRef = React.useRef();
-
-  // data
-  const navItems = [
-    {
-      label: 'About us',
-      id: 'about',
-    },
-
-    {
-      label: 'Photography Academy',
-      id: 'academy',
-    },
-  ];
 
   return (
     <chakra.nav
@@ -89,23 +71,31 @@ const Navbar = () => {
             </Text>
           </Link>
 
-          {navItems?.map((item, index) => {
-            return (
-              <Text
-                key={item.id}
-                onClick={() => {
-                  setToShow(item.id);
-                  generalDisclosure.onOpen();
-                }}
-                ref={generalRef}
-                fontSize='16px'
-                cursor='pointer'
-                fontWeight={500}
-              >
-                {item.label}
-              </Text>
-            );
-          })}
+          <Link passHref href='/about'>
+            <Text
+              fontSize='16px'
+              cursor='pointer'
+              fontWeight={600}
+              _hover={{
+                textDecor: 'none',
+              }}
+            >
+              About us
+            </Text>
+          </Link>
+
+          <Link passHref href='/academy'>
+            <Text
+              fontSize='16px'
+              cursor='pointer'
+              fontWeight={600}
+              _hover={{
+                textDecor: 'none',
+              }}
+            >
+              Photography Academy
+            </Text>
+          </Link>
 
           <Link passHref href='/gallery/?category=weddings'>
             <Text
@@ -139,11 +129,7 @@ const Navbar = () => {
         </HStack>
 
         {/*==================== Mobile view for navbar ============================== */}
-        <MobileView
-          gd={generalDisclosure}
-          gr={generalRef}
-          setToShow={setToShow}
-        />
+        <MobileView />
         {/* ============================================================ */}
       </Flex>
 

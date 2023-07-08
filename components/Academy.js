@@ -4,16 +4,17 @@ import { Text, Link, Box, chakra, Center, Button } from '@chakra-ui/react';
 
 const Academy = () => {
   return (
-    <Box px={{ base: 5, md: 52 }}>
-      <chakra.h2
+    <Box w='full' maxW='900px' mx='auto'>
+      <Text
         mt={10}
         mb={{ base: 6, md: 10 }}
         textAlign='center'
-        fontSize={{ base: '3xl', md: '32px' }}
-        fontWeight={600}
+        fontWeight={700}
+        fontSize={{ base: '3xl', md: '5xl' }}
+        as='h1'
       >
         Photography Academy
-      </chakra.h2>
+      </Text>
 
       {/* Some explanations */}
       <Box>
