@@ -30,10 +30,10 @@ const Testimonial = () => {
   return (
     <Box as='section' mt={{ base: 24, md: 32 }} mb={20} id='testimonials'>
       <Text
-        fontWeight={800}
-        fontSize={{ base: '2xl' }}
         as='h2'
         textAlign='center'
+        fontWeight={700}
+        fontSize={{ base: '3xl', md: '4xl' }}
       >
         Testimonials
       </Text>
