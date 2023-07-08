@@ -102,7 +102,7 @@ function MyApp({ Component, pageProps }) {
                   </svg>
                 </Text>
 
-                <Text ml={2} fontSize='15px' fontWeight={600}>
+                <Text ml={2} fontSize='16px' fontWeight={400}>
                   +2348053667690
                 </Text>
               </MenuItem>
@@ -155,7 +155,7 @@ function MyApp({ Component, pageProps }) {
                   </svg>
                 </Text>
 
-                <Text ml={2} fontSize='15px' fontWeight={600}>
+                <Text ml={2} fontSize='16px' fontWeight={400}>
                   @folasewailori
                 </Text>
               </MenuItem>
@@ -208,7 +208,7 @@ function MyApp({ Component, pageProps }) {
                   </svg>
                 </Text>
 
-                <Text ml={2} fontSize='15px' fontWeight={600}>
+                <Text ml={2} fontSize='16px' fontWeight={400}>
                   @folasewailoriweddings
                 </Text>
               </MenuItem>
@@ -243,7 +243,7 @@ function MyApp({ Component, pageProps }) {
                   </svg>
                 </Text>
 
-                <Text ml={2} fontSize='15px' fontWeight={600}>
+                <Text ml={2} fontSize='16px' fontWeight={400}>
                   Folasewa Ilori
                 </Text>
               </MenuItem>
@@ -276,7 +276,7 @@ function MyApp({ Component, pageProps }) {
                   </svg>
                 </Text>
 
-                <Text ml={2} fontSize='15px' fontWeight={600}>
+                <Text ml={2} fontSize='16px' fontWeight={400}>
                   @folasewailori
                 </Text>
               </MenuItem>
