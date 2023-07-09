@@ -4,9 +4,8 @@ import { Text, Link, Box, Center, Button } from '@chakra-ui/react';
 
 const Academy = () => {
   return (
-    <Box w='full' maxW='900px' mx='auto'>
+    <Box pt={{ base: 16, md: 24 }} w='full' maxW='900px' mx='auto'>
       <Text
-        mt={10}
         mb={{ base: 6, md: 10 }}
         textAlign='center'
         fontWeight={700}
@@ -17,7 +16,7 @@ const Academy = () => {
       </Text>
 
       {/* Some explanations */}
-      <Box>
+      <Box textAlign='center'>
         <Text fontSize='18px' mb={10}>
           Admissions into Our Photography Academy hold twice a year with course
           duration ranging from{' '}

@@ -63,7 +63,7 @@ const MobileView = () => {
                 borderBottomWidth='1px'
                 pb={3}
                 cursor='pointer'
-                fontWeight={800}
+                fontWeight={600}
               >
                 Home
               </Text>
@@ -74,7 +74,7 @@ const MobileView = () => {
                 borderBottomWidth='1px'
                 pb={3}
                 cursor='pointer'
-                fontWeight={800}
+                fontWeight={600}
               >
                 About us
               </Text>
@@ -83,7 +83,7 @@ const MobileView = () => {
             <Accordion allowMultiple>
               <AccordionItem borderTopWidth={0}>
                 <AccordionButton px={0}>
-                  <Box fontWeight={800} flex='1' textAlign='left'>
+                  <Box fontWeight={600} flex='1' textAlign='left'>
                     Gallery
                   </Box>
                   <AccordionIcon />
@@ -148,7 +148,7 @@ const MobileView = () => {
                 borderBottomWidth='1px'
                 pb={3}
                 cursor='pointer'
-                fontWeight={800}
+                fontWeight={600}
               >
                 Photography Academy
               </Text>
@@ -163,6 +163,7 @@ const MobileView = () => {
                 textDecor: 'none',
               }}
               href='https://19fjc2jot86.typeform.com/to/sRkOu5jd'
+              fontWeight={600}
             >
               Book us
             </ExtLink>
@@ -171,7 +172,7 @@ const MobileView = () => {
               borderBottomWidth="1px"
               pb={3}
               cursor="pointer"
-              fontWeight={800}
+              fontWeight={600}
             >
               Contact
             </Text> */}

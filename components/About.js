@@ -6,7 +6,13 @@ import { allClients } from '../data/clients';
 const AboutUs = () => {
   return (
     <Box>
-      <chakra.section pt='64px' w='full' maxW='900px' mx='auto'>
+      <chakra.section
+        // pt='64px'
+        pt={{ base: 16, md: 24 }}
+        w='full'
+        maxW='900px'
+        mx='auto'
+      >
         <Text
           textAlign='center'
           fontWeight={700}

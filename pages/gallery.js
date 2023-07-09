@@ -70,10 +70,6 @@ const Gallery = () => {
               spacing={{ base: 1, md: 4 }}
             >
               {allImages?.map((image) => {
-                const category = image.public_id
-                  .replace('folashewa_photography/', '')
-                  .split('/')[0];
-
                 return (
                   <Box key={image.public_id} bg='primary.100' cursor='pointer'>
                     <Image
